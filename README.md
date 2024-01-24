@@ -1,5 +1,9 @@
 # Project Title
 
+
+
+
+
 ## 1. Project Description
 State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
 This browser based web application to ... 
@@ -7,7 +11,7 @@ This browser based web application to ...
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 * Hi, my name is Arsh Mann! I am excited to develop my first application!
-* ...
+* Daniil's honest reaction: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 * ...
 	
 ## 3. Technologies and Resources Used
