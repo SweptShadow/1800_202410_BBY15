@@ -5,3 +5,8 @@
     bottom: 0;
     width: 100%;
   }
+
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
