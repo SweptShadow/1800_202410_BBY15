@@ -1,12 +1,76 @@
-.navbar {
-    background-color: #333;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
 
-  .responsive {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.icon-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar input {
     width: 100%;
-    height: auto;
-  }
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.search-bar button {
+    padding: 8px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.burger-menu {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+
+#menu li {
+    padding: 15px;
+    text-align: center;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
