@@ -1,3 +1,4 @@
+//loading in navbar and footer
 function loadSkeleton() {
   console.log($('#navbarPlaceholder').load('./text/navbar.html'));
   console.log($('#footerPlaceholder').load('./text/footer.html'));
