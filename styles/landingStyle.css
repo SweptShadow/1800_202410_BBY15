@@ -42,6 +42,33 @@ body {
     cursor: pointer;
 }
 
+#content-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 15vw);
+    grid-template-rows: repeat(5, 15vh);
+    grid-template-areas:
+    'nav nav nav nav nav'
+    'body1 body1 body1 body1 body1'
+    'body2 body2 body2 body2 body2'
+    'body3 body3 body3 body3 body3'
+    'foot foot foot foot foot';
+}
+
+.headernav { grid-area: nav; }
+.content-1 { grid-area: body1; }
+.content-2 { grid-area: body2; }
+.content-3 { grid-area: body3; }
+.content-footer { grid-area: foot; }
+
+#content-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid black;
+}
 #menu {
     position: fixed;
     top: 0;
