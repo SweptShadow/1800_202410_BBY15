@@ -44,30 +44,34 @@ body {
 
 #content-container {
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, 15vw);
-    grid-template-rows: repeat(5, 15vh);
+    grid-gap: 0.5em;
+    grid-template-rows: repeat(5, auto);
     grid-template-areas:
-    'nav nav nav nav nav'
-    'body1 body1 body1 body1 body1'
-    'body2 body2 body2 body2 body2'
-    'body3 body3 body3 body3 body3'
-    'foot foot foot foot foot';
+    'translink'
+    'recentroutes'
+    'busroutes'
+    'routeinfo'
+    'allmaps';
+    justify-content: center;
 }
 
-.headernav { grid-area: nav; }
-.content-1 { grid-area: body1; }
-.content-2 { grid-area: body2; }
-.content-3 { grid-area: body3; }
-.content-footer { grid-area: foot; }
+#translink{grid-area: translink;}
+#recentroutes{grid-area: recentroutes;}
+#busroutes{grid-area: busroutes;}
+#routeinfo{grid-area: routeinfo;}
+#allmaps{grid-area: allmaps;}
 
 #content-container > div {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
-    padding: 10px;
+    font-size: 22px;
+    padding: 0.5em;
     border: 1px solid black;
+}
+
+.landingContent{
+    font-size: 24px;
 }
 
 #menu {
