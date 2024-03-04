@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#grid-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+        "logo"
+        "login"
+        "bot";
+}
+
+#login-container {
+    grid-area: login;
+}
+
+#logo {
+    display: grid;
+    grid-area: logo;
+    place-items: center;
+}
+
+#but {
+    display: grid;
+    grid-area: bot;
+    place-items: center;
+}
+
+.button-7 {
+    background-color: #0095ff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    width: 20vw;
+    height: 5vh;
+}
+
+.button-7:hover,
+.button-7:focus {
+    background-color: #07c;
+}
+
+.button-7:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-7:active {
+    background-color: #0064bd;
+    box-shadow: none;
+}
