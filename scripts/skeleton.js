@@ -13,8 +13,9 @@ function loadSkeleton() {
   });
 
   $('#footerPlaceholder').load('./text/footer.html', function () {
+    
     function homeFunction() {
-      alert("Home button clicked");
+      window.location.href = 'landing.html';
     }
 
     function routesFunction() {
