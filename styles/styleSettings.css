@@ -62,4 +62,3 @@ input:checked + .toggle-btn {
 input:checked + .toggle-btn:after {
     transform: translateX(26px);
 }
-s
