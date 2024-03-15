@@ -22,7 +22,7 @@ function loadSkeleton() {
     }
 
     function returnFunction() {
-      alert("Return button clicked");
+      window.history.back();
     }
 
     // Attach the functions to window objects so they can be accessed globally
