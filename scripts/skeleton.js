@@ -13,7 +13,7 @@ function loadSkeleton() {
   });
 
   $('#footerPlaceholder').load('./text/footer.html', function () {
-    
+
     function homeFunction() {
       window.location.href = 'landing.html';
     }

@@ -1,130 +1,145 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
 }
 
 .icon-container img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .search-bar {
-    flex-grow: 1;
-    margin: 0 20px;
+  flex-grow: 1;
+  margin: 0 20px;
 }
 
 .search-bar input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 .search-bar button {
-    padding: 8px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+  padding: 8px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 #content-container {
-    display: grid;
-    grid-gap: 0.5em;
-    grid-template-rows: repeat(5, auto);
-    grid-template-areas:
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
     'translink'
     'recentroutes'
     'busroutes'
     'routeinfo'
     'allmaps';
-    justify-content: center;
+  justify-content: center;
 }
 
-#translink{grid-area: translink;}
-#recentroutes{grid-area: recentroutes;}
-#busroutes{grid-area: busroutes;}
-#routeinfo{grid-area: routeinfo;}
-#allmaps{grid-area: allmaps;}
-
-#content-container > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    padding: 0.5em;
-    border: 1px solid black;
+#translink {
+  grid-area: translink;
 }
 
-.landingContent{
-    font-size: 24px;
+#recentroutes {
+  grid-area: recentroutes;
+}
+
+#busroutes {
+  grid-area: busroutes;
+}
+
+#routeinfo {
+  grid-area: routeinfo;
+}
+
+#allmaps {
+  grid-area: allmaps;
+}
+
+#content-container>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  padding: 0.5em;
+  border: 1px solid black;
+}
+
+.landingContent {
+  font-size: 24px;
 }
 
 #menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease-in-out;
 }
 
 #menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
 }
 
 #menu li {
-    padding: 15px;
-    text-align: center;
+  padding: 15px;
+  text-align: center;
 }
 
 #menu a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .menu-hidden {
-    display: none;
+  display: none;
 }
 
 .navbar-collapse {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .footer {
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-  }
-  
-  .footer a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  .footer a:hover {
-    background: #ddd;
-    color: black;
-  }
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  z-index: 9999;
+}
+
+.footer a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.footer a:hover {
+  background: #ddd;
+  color: black;
+}
