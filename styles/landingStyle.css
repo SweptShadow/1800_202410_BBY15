@@ -37,11 +37,6 @@ body {
     cursor: pointer;
 }
 
-.burger-menu {
-    font-size: 24px;
-    cursor: pointer;
-}
-
 #content-container {
     display: grid;
     grid-gap: 0.5em;
@@ -105,6 +100,10 @@ body {
 
 .menu-hidden {
     display: none;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
 }
 
 .footer {
