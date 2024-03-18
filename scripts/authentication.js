@@ -42,12 +42,5 @@ var uiConfig = {
     tosUrl: '<your-tos-url>',
     // Privacy policy url.
     privacyPolicyUrl: '<your-privacy-policy-url>'
-
-    
 };
-
-document.getElementById("but").addEventListener("click", function() {
-    window.location.href = "landing.html"; // Change "landing.html" to the path of your landing page
-});
-
 ui.start('#firebaseui-auth-container', uiConfig);
