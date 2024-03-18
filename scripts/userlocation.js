@@ -10,7 +10,7 @@ function getUserLocation() {
 
 // Function to update user location data in Firestore
 async function updateUserLocation(userId, location) {
-  await db.collection('users').doc(userId).set({
+  await db.collection('users').doc(user.uid).set({
     latitude: location.coords.latitude,
     longitude: location.coords.longitude
   }, { merge: true });
