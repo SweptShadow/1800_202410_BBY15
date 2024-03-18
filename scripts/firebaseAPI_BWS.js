@@ -18,7 +18,7 @@ const app = firebase.initializeApp(firebaseConfig);
 //const db = firebase.firestore();
 //const storage = firebase.storage();
 
-var db = firebase.firestore();
+const db = firebase.firestore();
 
 // Fetch data and populate the containers in landing
 db.collection("collectionName").get().then((querySnapshot) => {
