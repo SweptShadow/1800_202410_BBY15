@@ -1,5 +1,5 @@
-import { db } from './firebaseAPI_BWS';
-import { getUserId } from './authentication';
+const db = require('./firebaseAPI_BWS').db;
+const getUserId = require('./authentication').getUserId;
 
 // Function to get user's current location
 function getUserLocation() {
@@ -10,7 +10,7 @@ function getUserLocation() {
 
 // Function to update user location data in Firestore
 async function updateUserLocation(userId, location) {
-  await db.collection('users').doc(user.uid).set({
+  await db.collection('users').doc(userId).set({
     latitude: location.coords.latitude,
     longitude: location.coords.longitude
   }, { merge: true });
