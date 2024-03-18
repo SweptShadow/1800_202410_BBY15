@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Arial', sans-serif;
 }
 .header {
@@ -64,27 +65,25 @@ body {
   display: none;
 }
 
-.busroutes {
-  display: block;
-  margin: .5em;
-  font-size: 22px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  width:100%;
-  height: auto;
-  box-sizing: border-box;
-}
-
-.busroutes:hover {
-  background-color: #6800b3;
-}
-
-#buttonContainer{
+#button-container {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Adjust as needed */
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
