@@ -1,24 +1,40 @@
-const db = require('./firebaseAPI_BWS').db;
-const getUserId = require('./authentication').getUserId;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    function success(pos) {
 
-// Function to get user's current location
-function getUserLocation() {
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(resolve, reject);
-  });
-}
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
 
-// Function to update user location data in Firestore
-async function updateUserLocation(userId, location) {
-  await db.collection('users').doc(userId).set({
-    latitude: location.coords.latitude,
-    longitude: location.coords.longitude
-  }, { merge: true });
-}
+      console.log(pos);
 
-// Main function to get user location and update Firestore
-async function trackUserLocation() {
-  const userId = getUserId(); // get user ID from authentication module
-  const location = await getUserLocation();
-  await updateUserLocation(userId, location);
-}
+      db.collection("users").doc(user.uid).update({
+        latitude: lat,
+        longitude: lng
+      });
+
+    }
+
+    function error(err) {
+
+      if (err.code === 1) {
+        alert("Please allow location access");
+      } else {
+        alert("Position Unavailable");
+      }
+
+    }
+
+    const options = {
+
+      enableHighAccuracy: true,
+      timeout: 5000
+
+    };
+
+    if (!navigator.geolocation) {
+      throw new Error("No geolocation available");
+    }
+
+    navigator.geolocation.watchPosition(success, error, options);
+  }
+});

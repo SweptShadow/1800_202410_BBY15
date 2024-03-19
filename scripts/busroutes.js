@@ -1,16 +1,18 @@
-// Fetch data and populate the containers in landing
-db.collection("busroutes").get().then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+// Import Firebase configuration from firebaseAPI_BWS
+var firebaseConfig = require('./firebaseAPI_BWS');
 
-    // Get the container element
-    var container = document.getElementById(doc.id);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-    // Check if the container exists
-    if (container) {
-      // Populate the container with data pulled
-      container.innerHTML = JSON.stringify(doc.data());
-    }
-  });
+var db = firebase.firestore();
+
+// Array of bus data fields and corresponding element IDs
+var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
+
+busDataFields.forEach(function(field) {
+  db.collection('busroutes').doc(field)
+    .get()
+    .then(function(doc) {
+      document.getElementById(field).innerText = JSON.stringify(doc.data());
+    })
 });
