@@ -56,47 +56,14 @@
       <p>All Maps</p>
     </div>
 
-  </div>
-
 
   <nav id="footerPlaceholder"></nav>
 
   <script src="./scripts/landingScript.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/firebaseAPI_BWS.js"></script>
-  <!-- <script src="./scripts/userlocation.js"></script> -->
+  <script src="./scripts/userlocation.js"></script>
 
 </body>
-<script>
-
-  
-
-  function success(pos) {
-
-    const lat = pos.coords.latitude;
-    const lng = pos.coords.longitude;
-
-    console.log(pos);
-
-    db.collection("users").doc(user.uid).set({
-      latitude: lat,
-      longitude: lng
-    });
-
-  }
-
-  function error() {
-
-  }
-
-  const options = {};
-
-  if (!navigator.geolocation) {
-    throw new Error("No geolocation available");
-  }
-
-  navigator.geolocation.getCurrentPosition(success, error, options);
-
-</script>
 
 </html>
