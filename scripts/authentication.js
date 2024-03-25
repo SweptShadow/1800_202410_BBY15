@@ -44,3 +44,13 @@ var uiConfig = {
     privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 ui.start('#firebaseui-auth-container', uiConfig);
+
+firebase.auth().signInAnonymously()
+    .then(() => {
+        // Signed in..
+    })
+    .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+    });
