@@ -66,17 +66,17 @@ body {
 }
 
 .footer {
-  overflow: hidden;
   position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
   background-color: #333;
-  z-index: 9999;
+  color: white;
+  text-align: center;
 }
 
 .footer a {
-  float: left;
-  display: block;
+  display: inline-block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
