@@ -19,7 +19,7 @@ function loadSkeleton() {
     }
 
     function routesFunction() {
-      alert("Routes button clicked");
+      window.location.href = 'busRoutes.html';
     }
 
     function returnFunction() {
