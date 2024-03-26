@@ -69,7 +69,7 @@
 
     <div id="but">
 
-      <button class="button-7" role="button" onclick="signInAnonymously()">Guest Login</button>
+      <button class="button-7" id="guest-login" role="button" onclick="signInAnonymously()">Guest Login</button>
 
     </div>
 
@@ -79,6 +79,10 @@
 
 <script>
   logout();       //make sure user is logged out
+
+  document.getElementById("guest-login").onclick = function () {
+    location.href="../busRoutes.html";
+  };
 </script>
 
 </html>
