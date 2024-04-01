@@ -32,3 +32,28 @@ busDataFields.forEach(function(field) {
       document.getElementById(field).innerText = text;
     })
 });
+
+function searchFirebase() {
+  const searchTerm = document.getElementById('searchInput').value.trim();
+
+  const searchResults = document.getElementById('searchResults');
+  searchResults.innerHTML = '';
+
+  db.collection('busroutes').where('Code', '==', searchTerm).get()
+  .then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        const li = document.createElement('li');
+        li.textContent = doc.id + ': ' + JSON.stringify(doc.data());
+        searchResults.appendChild(li);
+      });
+
+      if (querySnapshot.empty) {
+        const li = document.createElement('li');
+        li.textContent = 'No results found';
+        searchResults.appendChild(li);
+      }
+    })
+    .catch(error => {
+      console.error('Error searching documents: ', error);
+    });
+}

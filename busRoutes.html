@@ -32,6 +32,12 @@
   <script src="./scripts/userlocation.js"></script>
   <nav id="navbarPlaceholder"></nav>
 
+  <div class="filter-firebase">
+    <h1>Filter</h1>
+    <input type="text" id="searchInput" placeholder="Filter by bus number, station start, or station end location">
+    <button onclick="searchFirebase()">Search</button>
+    <ul id="searchResults"></ul>
+  </div>
   <div class="one" id="page-title">
     <h1>Bus Routes</h1>
   </div>
