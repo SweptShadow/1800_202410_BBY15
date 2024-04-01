@@ -238,3 +238,7 @@ h1 em {
     margin-left: -50px;
     background-color: #2c3d9f;
 }
+
+.material-icons {
+    cursor: pointer;
+}

@@ -20,10 +20,10 @@ const db = firebase.firestore();
 // Array of bus data fields and corresponding element IDs
 var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
 
-busDataFields.forEach(function(field) {
+busDataFields.forEach(function (field) {
   db.collection('busroutes').doc(field)
     .get()
-    .then(function(doc) {
+    .then(function (doc) {
       var data = doc.data();
       var text = '';
       for (var key in data) {
@@ -40,7 +40,7 @@ function searchFirebase() {
   searchResults.innerHTML = '';
 
   db.collection('busroutes').where('Code', '==', searchTerm).get()
-  .then(querySnapshot => {
+    .then(querySnapshot => {
       querySnapshot.forEach(doc => {
         const li = document.createElement('li');
         li.textContent = doc.id + ': ' + JSON.stringify(doc.data());

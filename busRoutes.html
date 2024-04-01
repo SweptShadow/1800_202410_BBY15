@@ -45,46 +45,69 @@
   <div id="button-container">
 
     <div class="card-container">
-      <button class="button-30" role="button" id="bus25" onclick="window.location.href='pageplaceholder1.html'">Bus
+      <button class="button-30" role="button" id="bus25"
+        onclick="window.location.href='eachbusinfo.html?busRoutesDocID=bus25'">Bus
         #025</button>
       <div id="bus25Data">
       </div>
+      <i class="material-icons" id="save-bus25" onclick="saveBookmark('bus25')">bookmark_border</i>
     </div>
 
     <br>
 
     <div class="card-container">
-      <button class="button-30" id="bus110" onclick="window.location.href='pageplaceholder1.html'">Bus
+      <button class="button-30" role="button" id="bus110"
+        onclick="window.location.href='eachbusinfo.html?busRoutesDocID=bus110'">Bus
         #110</button>
       <div id="bus110Data">
       </div>
+      <i class="material-icons" id="save-bus110" onclick="saveBookmark('bus110')">bookmark_border</i>
     </div>
 
     <br>
     <div class="card-container">
-      <button class="button-30" id="bus122" onclick="window.location.href='pageplaceholder1.html'">Bus
+      <button class="button-30" role="button" id="bus122"
+        onclick="window.location.href='eachbusinfo.html?busRoutesDocID=bus122'">Bus
         #122</button>
       <div id="bus122Data">
       </div>
+      <i class="material-icons" id="save-bus122" onclick="saveBookmark('bus122')">bookmark_border</i>
     </div>
 
     <br>
     <div class="card-container">
-      <button class="button-30" id="bus130" onclick="window.location.href='pageplaceholder1.html'">Bus
+      <button class="button-30" role="button" id="bus130"
+        onclick="window.location.href='eachbusinfo.html?busRoutesDocID=bus130'">Bus
         #130</button>
       <div id="bus130Data">
       </div>
+      <i class="material-icons" id="save-bus130" onclick="saveBookmark('bus130')">bookmark_border</i>
     </div>
 
     <br>
     <div class="card-container">
-      <button class="button-30" id="bus222" onclick="window.location.href='pageplaceholder1.html'">Bus
+      <button class="button-30" role="button" id="bus222"
+        onclick="window.location.href='eachbusinfo.html?busRoutesDocID=bus222'">Bus
         #222</button>
       <div id="bus222Data">
       </div>
+      <i class="material-icons" id="save-bus222" onclick="saveBookmark('bus222')">bookmark_border</i>
     </div>
 
   </div>
+
+  <!-- Templates for general use, not displayed -->
+  <template id="savedCardTemplate">
+    <div class="card py-2 mx-2 bg-light" style="width: 10rem;">
+      <img class="card-image card-img-top" src=" ..." alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-length">placeholder</p>
+        <br>
+        <a class="btn btn-secondary card-href" id="read-more">Read more ...</a>
+      </div>
+    </div>
+  </template>
 
   <nav id="footerPlaceholder"></nav>
 
