@@ -7,9 +7,6 @@ function loadSkeleton() {
     if (!menu.classList.contains('menu-hidden')) {
       menu.classList.add('menu-hidden');
     }
-    burgerMenu.addEventListener('click', function () {
-      menu.classList.toggle('menu-hidden');
-    });
   });
 
   $('#footerPlaceholder').load('./text/footer.html', function () {

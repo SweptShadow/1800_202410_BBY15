@@ -32,14 +32,19 @@
   <script src="./scripts/userlocation.js"></script>
   <nav id="navbarPlaceholder"></nav>
 
-  <div class="filter-firebase">
-    <h1>Filter</h1>
-    <input type="text" id="searchInput" placeholder="Filter by bus number, station start, or station end location">
-    <button onclick="searchFirebase()">Search</button>
-    <ul id="searchResults"></ul>
-  </div>
+  <form class="d-flex">
+    <div class="filter-firebase">
+      <input class="form-control me-2" type="text" id="searchInput"
+        placeholder="Filter by bus number, station start, or station end location">
+      <button class="btn btn-warning" onclick="searchFirebase()">Search</button>
+      <ul id="searchResults"></ul>
+    </div>
+  </form>
   <div class="one" id="page-title">
     <h1>Bus Routes</h1>
+    <br>
+    <br>
+    <br>
   </div>
 
   <div id="button-container">
@@ -47,14 +52,13 @@
     <div class="card-container">
       <button class="button-30" role="button" id="bus25"
         onclick="window.location.href='eachbusinfo.html?busRoutesDocID=bus25'">Bus
-        #025</button>
+        #25</button>
       <div id="bus25Data">
       </div>
       <i class="material-icons" id="save-bus25" onclick="saveBookmark('bus25')">bookmark_border</i>
     </div>
 
     <br>
-
     <div class="card-container">
       <button class="button-30" role="button" id="bus110"
         onclick="window.location.href='eachbusinfo.html?busRoutesDocID=bus110'">Bus
@@ -65,14 +69,6 @@
     </div>
 
     <br>
-    <div class="card-container">
-      <button class="button-30" role="button" id="bus122"
-        onclick="window.location.href='eachbusinfo.html?busRoutesDocID=bus122'">Bus
-        #122</button>
-      <div id="bus122Data">
-      </div>
-      <i class="material-icons" id="save-bus122" onclick="saveBookmark('bus122')">bookmark_border</i>
-    </div>
 
     <br>
     <div class="card-container">
@@ -98,13 +94,16 @@
 
   <!-- Templates for general use, not displayed -->
   <template id="savedCardTemplate">
-    <div class="card py-2 mx-2 bg-light" style="width: 10rem;">
-      <img class="card-image card-img-top" src=" ..." alt="...">
+    <div class="card py-2 mx-2 bg-light" style="width: 100%;">
+      <button class="button-30" role="button" id="...">Bus #...</button>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-length">placeholder</p>
+        <p class="card-start">Bus route start: <span class="route-start">placeholder</span></p>
+        <p class="card-end">Bus route end: <span class="route-end">placeholder</span></p>
         <br>
-        <a class="btn btn-secondary card-href" id="read-more">Read more ...</a>
+        <div class="button-container">
+          <a class="btn btn-secondary card-href" id="read-more">Read more ...</a>
+          <i class="material-icons" id="save-bus..." onclick="saveBookmark('bus...')">bookmark_border</i>
+        </div>
       </div>
     </div>
   </template>

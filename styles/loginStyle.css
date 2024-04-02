@@ -1,63 +1,76 @@
-@media only screen and (max-width: 600px) {
-
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    
-    #grid-container {
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        grid-template-areas:
-            "logo logo"
-            "login login"
-            "bot-left bot-right";
-    }
-    
-    #login-container {
-        grid-area: login;
-    }
-    
-    #logo {
-        display: grid;
-        grid-area: logo;
-        place-items: center;
-    }
-    
-    #pic {
-        grid-area: bot-left;
-    }
-
-    #but {
-        grid-area: bot-right;
-    }
-    
-    .button-7 {
-        background-color: #3f51b5;
-        border: 1px solid transparent;
-        border-radius: 3px;
-        box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
-        box-sizing: border-box;
-        color: #fff;
-        display: inline-block;
-        width: 40vw;
-        height: 5vh;
-    }
-    
-    .button-7:hover,
-    .button-7:focus {
-        background-color: #334297;
-    }
-    
-    .button-7:focus {
-        box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
-    }
-    
-    .button-7:active {
-        background-color: rgb(2, 79, 145);
-        box-shadow: none;
-    }
-
+body {
+    margin: 0;
+    padding: 0;
 }
 
+#grid-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+        "logo"
+        "login"
+        "bot";
+}
+
+#login-container {
+    grid-area: login;
+}
+
+#logo {
+    display: grid;
+    grid-area: logo;
+    place-items: center;
+}
+
+#pic {
+    grid-area: bot;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pics {
+    max-width: 20rem;
+}
+
+.button-7 {
+    background-color: #3f51b5;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    width: 40vw;
+    height: 5vh;
+}
+
+.button-7:hover,
+.button-7:focus {
+    background-color: #334297;
+}
+
+.button-7:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-7:active {
+    background-color: rgb(2, 79, 145);
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #grid-container {
+        grid-template-areas:
+            "logo"
+            "login"
+            "bot";
+    }
+
+    .button-7 {
+        width: 90%;
+        height: auto;
+    }
+}
