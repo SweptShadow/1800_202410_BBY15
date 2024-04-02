@@ -1,9 +1,8 @@
 function loadSkeleton() {
   $('#navbarPlaceholder').load('./text/navbar.html', function () {
-    const burgerMenu = document.getElementById('burgerMenu');
     const menu = document.getElementById('navLinks');
 
-    // Ensure correct initial state
+    //Ensure correct initial state
     if (!menu.classList.contains('menu-hidden')) {
       menu.classList.add('menu-hidden');
     }
@@ -23,7 +22,7 @@ function loadSkeleton() {
       window.history.back();
     }
 
-    // Attach the functions to window objects so they can be accessed globally
+    //Attach the functions to window objects so they can be accessed globally
     window.homeFunction = homeFunction;
     window.routesFunction = routesFunction;
     window.returnFunction = returnFunction;
@@ -32,18 +31,17 @@ function loadSkeleton() {
 loadSkeleton();
 
 function saveBookmark(busRoutesDocID) {
-  // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
+  //Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
   currentUser.update({
-    // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
-    // This method ensures that the ID is added only if it's not already present, preventing duplicates.
+    //Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
+    //Method ensures that the ID is added only if it's not already present, preventing duplicates.
     bookmarks: firebase.firestore.FieldValue.arrayUnion(busRoutesDocID)
   })
-    // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
+    //Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
     .then(function () {
       console.log("bookmark has been saved for" + busRoutesDocID);
       let iconID = 'save-' + busRoutesDocID;
-      //console.log(iconID);
-      //this is to change the icon of the hike that was saved to "filled"
+      //console.log(iconID) to change the icon of the hike that was saved to "filled"
       document.getElementById(iconID).innerText = 'bookmark';
     });
 }

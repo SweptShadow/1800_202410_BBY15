@@ -6,7 +6,7 @@ firebase.auth().onAuthStateChanged((user) => {
       const lng = pos.coords.longitude;
 
       console.log(pos);
-      //updating the db with the user location
+      //updating the db with the user
       db.collection("users").doc(user.uid).update({
         latitude: lat,
         longitude: lng
