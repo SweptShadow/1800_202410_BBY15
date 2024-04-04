@@ -43,8 +43,8 @@ function editUserInfo() {
 function saveUserInfo() {
 
     userName = document.getElementById('nameInput').value;       //get the value of the field with id="nameInput"
-    userSchool = document.getElementById('schoolInput').value;     //get the value of the field with id="schoolInput"
-    userCity = document.getElementById('cityInput').value;       //get the value of the field with id="cityInput"
+    userSchool = document.getElementById('schoolInput').value;
+    userCity = document.getElementById('cityInput').value;
 
     currentUser.update({
         name: userName,
