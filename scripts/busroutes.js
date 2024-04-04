@@ -1,4 +1,3 @@
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
 //Array of bus data fields and corresponding element IDs
 var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
 
