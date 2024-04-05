@@ -30,30 +30,29 @@ function loadSkeleton() {
 }
 loadSkeleton();
 
-function saveBookmark(busRoutesDocID) {
+function toggleBookmark(busRoutesDocID) {
   if (currentUser) {
-    //Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
-    currentUser.update({
-      //Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
-      //Method ensures that the ID is added only if it's not already present, preventing duplicates.
-      bookmarks: firebase.firestore.FieldValue.arrayUnion(busRoutesDocID)
+    currentUser.get().then(userDoc => {
+      var bookmarks = userDoc.data().bookmarks;
+      if (bookmarks.includes(busRoutesDocID)) {
+        //If the bookmark is already present, remove it
+        currentUser.update({
+          bookmarks: firebase.firestore.FieldValue.arrayRemove(busRoutesDocID)
+        }).then(function () {
+          console.log("Bookmark has been removed for " + busRoutesDocID);
+          let iconID = 'save-' + busRoutesDocID;
+          document.getElementById(iconID).innerText = 'bookmark_border';
+        });
+      } else {
+        //If the bookmark is not present, add it
+        currentUser.update({
+          bookmarks: firebase.firestore.FieldValue.arrayUnion(busRoutesDocID)
+        }).then(function () {
+          console.log("Bookmark has been saved for " + busRoutesDocID);
+          let iconID = 'save-' + busRoutesDocID;
+          document.getElementById(iconID).innerText = 'bookmark';
+        });
+      }
     })
-      //Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
-      .then(function () {
-        console.log("bookmark has been saved for" + busRoutesDocID);
-        let iconID = 'save-' + busRoutesDocID;
-        //console.log(iconID) to change the icon of the hike that was saved to "filled"
-        document.getElementById(iconID).innerText = 'bookmark';
-      });
   }
-}
-
-if (currentUser) {
-  currentUser.get().then(userDoc => {
-    //get the user name
-    var bookmarks = userDoc.data().bookmarks;
-    if (bookmarks.includes(docID)) {
-      document.getElementById('save-' + docID).innerText = 'bookmark';
-    }
-  })
 }
