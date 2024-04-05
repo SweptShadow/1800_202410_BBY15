@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f1efef; /* Light grey background color */
+    background: url("../images/translink-double-decker.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container {
