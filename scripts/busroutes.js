@@ -1,3 +1,22 @@
+//----------------------------------------
+//  Your web app's Firebase configuration
+//----------------------------------------
+var firebaseConfig = {
+  apiKey: "AIzaSyDxMxHoVQ-D4yMcApt2e6ptrZ79C0o_Mpk",
+  authDomain: "bus-w-us.firebaseapp.com",
+  projectId: "bus-w-us",
+  storageBucket: "bus-w-us.appspot.com",
+  messagingSenderId: "1019919123496",
+  appId: "1:1019919123496:web:6c9d4776d24644723c211d"
+};
+
+//--------------------------------------------
+// initialize the Firebase app
+// initialize Firestore database if using it
+//--------------------------------------------
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 //Array of bus data fields and corresponding element IDs
 var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
 
@@ -64,11 +83,11 @@ function saveBookmark(busId) {
         bookmarks: firebase.firestore.FieldValue.arrayRemove(busId)
       })
         .then(() => {
-          console.log('Bookmark removed successfully');  
+          console.log('Bookmark removed successfully');
           document.getElementById('save-' + busId).innerText = 'bookmark_border';
         })
         .catch((error) => {
-          console.error('Error removing bookmark: ', error);  
+          console.error('Error removing bookmark: ', error);
         });
     } else {
       //Add the busId to the 'bookmark' field
