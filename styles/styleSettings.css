@@ -86,3 +86,8 @@ input:checked+.toggle-btn:after {
     background: #ddd;
     color: black;
 }
+.nav-item:hover {
+    transform: scale(1.1);
+    filter: brightness(80%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
