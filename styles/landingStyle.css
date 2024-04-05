@@ -1,7 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 24px;
   font-family: 'Arial', sans-serif;
+  background-color: #bababa; /* Light grey background color */
 }
 
 .header {
@@ -73,6 +75,7 @@ li {
 }
 
 #translink {
+  margin-top:20px;
   grid-area: translink;
 }
 
@@ -96,13 +99,35 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 22px;
+  font-size: 24px;
   padding: 0.5em;
   border: 1px solid black;
 }
 
 .landingContent {
-  font-size: 24px;
+  display: block;
+  width: 100%; /* Make the button take the full width of its container */
+  padding: 10px; /* Adjust padding as needed */
+  background-color: #200e5f; /* Light grey background color */
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
+  color: white;
+}
+.landingContent:hover {
+  transform: scale(1.1);
+  filter: brightness(80%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.landingContent h3 a {
+  text-decoration: none; /* Remove underline from the anchor */
+  color: inherit; /* Inherit text color from parent */
+  display: block;
+}
+
+.landingContent h3 a i {
+  margin-right: 5px; /* Add a small space between the icon and the text */
 }
 
 #menu {
@@ -130,7 +155,7 @@ li {
 #menu a {
   text-decoration: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
 }
 
