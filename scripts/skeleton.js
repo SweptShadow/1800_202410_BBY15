@@ -7,7 +7,7 @@ function loadSkeleton() {
       menu.classList.add('menu-hidden');
     }
   });
-  $('pagefooterPlaceholder').load('./text/pagefooter.html');
+  $('#pagefooterPlaceholder').load('./text/pagefooter.html');
   $('#footerPlaceholder').load('./text/footer.html', function () {
 
     function homeFunction() {
