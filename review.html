@@ -35,23 +35,53 @@
 <body>
   <nav id="navbarPlaceholder"></nav>
 
-  <div id="content-container">
+  <!--code from demo-->
+  <div class="container">
+    <br>
+    <h1>Review for <span id="routeName"> Route Name</span></h1>
+    <br>
+    <form onsubmit="event.preventDefault(); writeReview();">
 
-    <div class="landingContent" id="translink">
-      <h1>Translink Alerts</h1>
-    </div>
+      <div class="form-group">
+        <div class="form-group">
+          <label>How busy is the route?</label>
+          <input type="radio" id="veryBusy" name="busy" value="very busy">
+          <label for="veryBusy">Very Busy</label>
+          <input type="radio" id="busy" name="busy" value="busy">
+          <label for="busy">Busy</label>
+          <input type="radio" id="notBusy" name="busy" value="not busy">
+          <label for="notBusy">Not Busy</label>
+        </div>
 
-    <div class="landingContent" id="recentroutes">
-      <h3>Recent Routes</h3>
-    </div>
+        <br>
+        <div class="form-group">
+          <label>Would you recommend the route at this time?</label>
+          <input type="radio" id="recommendYes" name="recommend" value="yes">
+          <label for="recommendYes">Yes</label>
+          <input type="radio" id="recommendNo" name="recommend" value="no">
+          <label for="recommendNo">No</label>
+        </div>
 
-    <div class="landingContent" id="busroutes">
-      <h3><a href="javascript:void(0);" onclick="routesFunction()"><i class="bi bi-geo-alt"></i>Bus Routes</a></h3>
-    </div>
+        <br>
+        <div class="form-group">
+          <label>Time of Review</label>
+          <input type="radio" id="morning" name="time" value="morning">
+          <label for="morning">Morning</label>
+          <input type="radio" id="afternoon" name="time" value="afternoon">
+          <label for="afternoon">Afternoon</label>
+          <input type="radio" id="evening" name="time" value="evening">
+          <label for="evening">Evening</label>
+          <input type="radio" id="night" name="time" value="night">
+          <label for="night">Night</label>
+        </div>
 
-    <div class="landingContent" id="allmaps">
-      <p>All Maps</p>
-    </div>
+        <br>
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-lg btn-primary mx-auto d-block">Submit Review</button>
+        </div>
+      </div>
+    </form>
+
   </div>
 
   <nav id="footerPlaceholder"></nav>
@@ -59,7 +89,7 @@
   <script src="./scripts/firebaseAPI_BWS.js"></script>
   <script src="./scripts/landingScript.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/userlocation.js"></script>
+  <script src="./scripts/review.js"></script>
 
 </body>
 
