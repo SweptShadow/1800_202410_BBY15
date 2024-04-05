@@ -26,12 +26,13 @@
   <!-- Link to styles of your own -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="styles/bInfo.css">
+  
 </head>
 
 <body>
   <nav id="navbarPlaceholder"></nav>
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="bus-container">
       <h1 class="display-1"><span id="bus-number"></span></h1>
       <hr>
@@ -42,7 +43,16 @@
         <p>Route End: <span id="route-end-here"></span></p>
       </div>
     </div>
+  </div> -->
+
+  <div id="stopsContainer">
+    <!-- Buttons for each stop will be added here by the JavaScript -->
   </div>
+
+  <!-- Template for stop buttons -->
+  <template id="stopButtonTemplate">
+    <button class="stop-button button-30" role="button"></button>
+  </template>
 
   <nav id="footerPlaceholder"></nav>
 
