@@ -52,10 +52,12 @@ db.collection("busroutes").get().then((querySnapshot) => {
 
     //Set data from Firestore 
     var data = doc.data();
+    var busDocID = "bus" + data.Code + "Data"
     button.textContent = 'Bus #' + data.Code;
     button.id = 'bus' + data.Code;
     button.onclick = function () {
       window.location.href = 'eachbusinfo.html?busRoutesDocID=bus' + data.Code;
+      localStorage.setItem('routeDocId', busDocID);
     };
     routeStart.textContent = data.Route_start;
     routeEnd.textContent = data.Route_end;
@@ -132,4 +134,10 @@ function searchFirebase() {
     .catch(error => {
       console.error('Error searching documents: ', error);
     });
+}
+
+function saveRouteDocID(routeDocID) {
+  localStorage.setItem('routeDocId', routeDocID);
+  alert("stored");
+  window.location.href='eachbusinfo.html?busRoutesDocID=bus222'
 }
