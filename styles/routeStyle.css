@@ -264,3 +264,7 @@ h1 em {
 .material-icons {
   cursor: pointer;
 }
+
+.card-container {
+  display: none;
+}
