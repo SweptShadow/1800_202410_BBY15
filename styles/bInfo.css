@@ -1,8 +1,31 @@
 body {
     margin: 0;
+    padding: 0;
+    font-size: 24px;
     font-family: 'Arial', sans-serif;
+    background-color: #d0d0d0;
+    background: url("../images/translink-double-decker.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+
+input[type="text"], button {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 5px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+  }
+  
 .header {
     display: flex;
     justify-content: space-between;
