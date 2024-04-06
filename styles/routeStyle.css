@@ -6,6 +6,7 @@ body {
   background: url("../images/translink-double-decker.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .header {
@@ -277,20 +278,4 @@ h1 em {
   transform: scale(1.1);
   filter: brightness(80%);
   transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.savedCardTemplate {
-  background-color: rgba(255, 255, 255, 0.1); /* White background with 50% opacity */
-}
-
-.card-body {
-  background-color: rgba(255, 255, 255, 0.1); /* White background with 50% opacity */
-}
-
-.button-container {
-  background-color: rgba(255, 255, 255, 0.1); /* White background with 50% opacity */
-}
-
-.routecard {
-  background-color: rgba(255, 255, 255, 0.1); /* White background with 50% opacity */
 }

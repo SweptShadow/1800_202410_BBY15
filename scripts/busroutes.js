@@ -17,21 +17,21 @@ var firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-//Array of bus data fields and corresponding element IDs
-var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
+//Array of bus data fields and corresponding element IDs (code for offline mode feature which we didn't have time to implement)
+// var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
 
-busDataFields.forEach(function (field) {
-  db.collection('busroutes').doc(field)
-    .get()
-    .then(function (doc) {
-      var data = doc.data();
-      var text = '';
-      for (var key in data) {
-        text += key + ': ' + data[key] + '\n';
-      }
-      document.getElementById(field).innerText = text;
-    })
-});
+// busDataFields.forEach(function (field) {
+//   db.collection('busroutes').doc(field)
+//     .get()
+//     .then(function (doc) {
+//       var data = doc.data();
+//       var text = '';
+//       for (var key in data) {
+//         text += key + ': ' + data[key] + '\n';
+//       }
+//       document.getElementById(field).innerText = text;
+//     })
+// });
 
 //Get template and container
 var template = document.getElementById('savedCardTemplate');

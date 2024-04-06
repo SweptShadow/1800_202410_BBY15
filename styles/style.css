@@ -2,10 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f1efef; /* Light grey background color */
+    background-color: #f1efef;
+    /* Light grey background color */
     background: url("../images/translink-double-decker.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .header {
@@ -247,4 +249,3 @@ ul {
     align-items: center;
     justify-content: center;
 }
-

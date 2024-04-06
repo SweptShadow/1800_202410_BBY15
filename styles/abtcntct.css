@@ -1,10 +1,12 @@
-#infobox {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f1efef; /* Light grey background color */
+  background: url("../images/translink-double-decker.jpg");
+  background-size: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .infob {
@@ -28,4 +30,35 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+
+.one h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.one h1:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #2c3d9f;
+}
+
+.one h1:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #2c3d9f;
 }
