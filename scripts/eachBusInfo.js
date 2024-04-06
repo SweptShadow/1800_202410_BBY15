@@ -31,21 +31,8 @@ function populateStops() {
     }
 }
 
-// // Function to populate the iframe
-// function populateIframe() {
-
-//     if (storedRouteDocId === "bus222Data") {
-//         const iframeHTML = `
-//         <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d41656.889054947205!2d-123.07705478629313!3d49.26586918540035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x5486765ebe5384c7%3A0x30de4974e65cb11!2sMetrotown%20Station%20%40%20Bay%205%2C%20Burnaby%2C%20BC%20V5H%204J5!3m2!1d49.225919999999995!2d-123.00276!4m5!1s0x5486708c5a614839%3A0x3f568ef06d08057c!2sPhibbs%20Exchange%20%40%20Bay%201%2C%20North%20Vancouver%2C%20BC!3m2!1d49.304939999999995!2d-123.02830999999999!5e0!3m2!1sen!2sca!4v1712340875520!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-//       `;
-
-//         // Insert the iframe into the body of the page
-//         document.body.innerHTML += iframeHTML;
-//     }
-// }
-
 // Function to populate the iframe
-function populateIframe() {
+function populateGoogleMaps() {
 
     if (storedRouteDocId === "bus110Data") {
         const iframeContainer = document.getElementById('iframeContainer');
@@ -93,8 +80,67 @@ function populateIframe() {
 
 }
 
+// function populateStopsMaps() {
+
+//     const stopsMapContainer = document.getElementById('stopsMap');
+//     const stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/222.png" alt="Map of busy stops for Bus #222">`;
+
+//     stopsMapContainer.innerHTML = stopsMapHTML;
+
+// }
+
 // Call the functions when the window loads
 window.onload = function () {
     populateStops();
-    populateIframe();
+    populateGoogleMaps();
+    // populateStopsMaps();
 };
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const mapImage = document.getElementById('mapImage');
+    const container = document.getElementById('container');
+    let isDragging = false;
+    let x = 0;
+    let y = 0;
+
+    mapImage.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        x = e.clientX - mapImage.offsetLeft;
+        y = e.clientY - mapImage.offsetTop;
+        mapImage.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            let dx = e.clientX - x;
+            let dy = e.clientY - y;
+
+            // Get the boundaries of the container
+            const containerRect = container.getBoundingClientRect();
+            const imageRect = mapImage.getBoundingClientRect();
+
+            // Calculate the new position of the image
+            let newLeft = dx;
+            let newTop = dy;
+
+            // Check if the image is within the boundaries
+            if (newLeft > 0) newLeft = 0;
+            if (newTop > 0) newTop = 0;
+            if (newLeft < containerRect.width - imageRect.width) newLeft = containerRect.width - imageRect.width;
+            if (newTop < containerRect.height - imageRect.height) newTop = containerRect.height - imageRect.height;
+
+            // Set the new position of the image
+            mapImage.style.left = newLeft + 'px';
+            mapImage.style.top = newTop + 'px';
+        }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+        isDragging = false;
+        mapImage.style.cursor = 'grab';
+    });
+
+    // Prevent the default drag behavior
+    mapImage.ondragstart = function () { return false; };
+});
+
