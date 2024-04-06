@@ -15,6 +15,22 @@ body {
     color: #fff;
 }
 
+input[type="text"], button {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 5px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+  }
+  
 .icon-container img {
     width: 40px;
     height: 40px;
