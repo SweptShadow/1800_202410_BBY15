@@ -17,6 +17,19 @@ var firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+var currentUser;
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    currentUser = db.collection("users").doc(user.uid); //global
+    console.log(currentUser);
+  } else {
+    // No user is signed in.
+    console.log("No user is signed in");
+    window.location.href = "login.html";
+  }
+});
+
 //Array of bus data fields and corresponding element IDs (code for offline mode feature which we didn't have time to implement)
 // var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
 
@@ -69,46 +82,46 @@ db.collection("busroutes").get().then((querySnapshot) => {
 
     //Attach newcard to the container
     container.appendChild(newcard);
+    
+    currentUser.get().then(userDoc => {
+      //get the user name
+      var bookmarks = userDoc.data().bookmarks;
+      if (bookmarks.includes('bus110')) {
+        document.getElementById('save-' + 'bus110').innerText = 'bookmark';
+      }
+      if (bookmarks.includes('bus130')) {
+        document.getElementById('save-' + 'bus130').innerText = 'bookmark';
+      }
+      if (bookmarks.includes('bus222')) {
+        document.getElementById('save-' + 'bus222').innerText = 'bookmark';
+      }
+      if (bookmarks.includes('bus25')) {
+        document.getElementById('save-' + 'bus25').innerText = 'bookmark';
+      }
+    })
   });
 });
 
-function saveBookmark(busId) {
-  var uid = firebase.auth().currentUser.uid;
-  //Get reference to the user's document in Firestore
-  var userDocRef = db.collection('users').doc(uid);
-  // Get the current bookmarks
-  userDocRef.get().then((doc) => {  // Added this line to get the current bookmarks
-    var bookmarks = doc.data().bookmarks;
-    if (bookmarks.includes(busId)) {
-      //If the busId is already bookmarked, remove it
-      userDocRef.update({
-        bookmarks: firebase.firestore.FieldValue.arrayRemove(busId)
-      })
-        .then(() => {
-          console.log('Bookmark removed successfully');
-          document.getElementById('save-' + busId).innerText = 'bookmark_border';
-          populateBookmarks();
-        })
-        .catch((error) => {
-          console.error('Error removing bookmark: ', error);
-        });
-    } else {
-      //Add the busId to the 'bookmark' field
-      userDocRef.update({
-        bookmarks: firebase.firestore.FieldValue.arrayUnion(busId)
-      })
-        .then(() => {
-          console.log('Bookmark saved successfully');
-          document.getElementById('save-' + busId).innerText = 'bookmark';
-        })
-        .catch((error) => {
-          console.error('Error saving bookmark: ', error);
-        });
-    }
+
+//-----------------------------------------------------------------------------
+// This function is called whenever the user clicks on the "bookmark" icon.
+// It adds the hike to the "bookmarks" array
+// Then it will change the bookmark icon from the hollow to the solid version. 
+//-----------------------------------------------------------------------------
+function saveBookmark(routeID) {
+  // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
+  currentUser.update({
+    // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
+    // This method ensures that the ID is added only if it's not already present, preventing duplicates.
+    bookmarks: firebase.firestore.FieldValue.arrayUnion(routeID)
   })
-    .catch((error) => {
-      //Handle errors when getting the bookmarks
-      console.error('Error getting bookmarks: ', error);
+    // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
+    .then(function () {
+      console.log("bookmark has been saved for" + routeID);
+      let iconID = 'save-' + routeID;
+      //console.log(iconID);
+      //this is to change the icon of the hike that was saved to "filled"
+      document.getElementById(iconID).innerText = 'bookmark';
     });
 }
 
@@ -140,5 +153,5 @@ function searchFirebase() {
 function saveRouteDocID(routeDocID) {
   localStorage.setItem('routeDocId', routeDocID);
   alert("stored");
-  window.location.href='eachbusinfo.html?busRoutesDocID=bus222'
+  window.location.href = 'eachbusinfo.html?busRoutesDocID=bus222'
 }
