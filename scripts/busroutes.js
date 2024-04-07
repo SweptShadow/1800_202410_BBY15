@@ -82,7 +82,7 @@ db.collection("busroutes").get().then((querySnapshot) => {
 
     //Attach newcard to the container
     container.appendChild(newcard);
-    
+
     currentUser.get().then(userDoc => {
       //get the user name
       var bookmarks = userDoc.data().bookmarks;
@@ -109,21 +109,37 @@ db.collection("busroutes").get().then((querySnapshot) => {
 // Then it will change the bookmark icon from the hollow to the solid version. 
 //-----------------------------------------------------------------------------
 function saveBookmark(routeID) {
-  // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
-  currentUser.update({
-    // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
-    // This method ensures that the ID is added only if it's not already present, preventing duplicates.
-    bookmarks: firebase.firestore.FieldValue.arrayUnion(routeID)
-  })
-    // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
-    .then(function () {
-      console.log("bookmark has been saved for" + routeID);
-      let iconID = 'save-' + routeID;
-      //console.log(iconID);
-      //this is to change the icon of the hike that was saved to "filled"
-      document.getElementById(iconID).innerText = 'bookmark';
-    });
+  // Get a reference to the user document
+  const userDoc = currentUser.get();
+
+  userDoc.then((doc) => {
+    let bookmarks = doc.data().bookmarks;
+    let iconID = 'save-' + routeID;
+    let icon = document.getElementById(iconID);
+
+    // Check if the route is already in the bookmarks array
+    if (bookmarks.includes(routeID)) {
+      // If it is, remove it from the array and change the bookmark icon back to what it was before
+      currentUser.update({
+        bookmarks: firebase.firestore.FieldValue.arrayRemove(routeID)
+      })
+        .then(function () {
+          console.log("Bookmark has been removed for " + routeID);
+          icon.innerText = 'bookmark_border';
+        });
+    } else {
+      // If it is not, add it to the array and change the bookmark icon to be filled in
+      currentUser.update({
+        bookmarks: firebase.firestore.FieldValue.arrayUnion(routeID)
+      })
+        .then(function () {
+          console.log("Bookmark has been saved for " + routeID);
+          icon.innerText = 'bookmark';
+        });
+    }
+  });
 }
+
 
 function searchFirebase() {
   const searchTerm = document.getElementById('searchInput').value.trim();
