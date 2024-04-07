@@ -33,13 +33,13 @@
 <body>
   <nav id="navbarPlaceholder"></nav>
   <br>
-  <h1>Route Map</h1>
+  <h1 id="route-title"></h1>
   <br>
   <div id="iframeBorder">
     <div id="iframeContainer"></div>
   </div>
   <br>
-  <h1>Busy Stops</h1>
+  <h1>Route Stops</h1>
   <br>
 
   <div id="todRadio" class="radio-container">
@@ -65,6 +65,12 @@
   </div>
 
   <br>
+  <h1 id="legend">
+    <span><span></span> Not Busy</span>
+    <span><span></span> Busy</span>
+    <span><span></span> Very Busy</span>
+  </h1>
+  <br>
 
   <div id="imgButtons">
     <button id="expand-map" class="button-7" role="button" onclick="populateStopsMaps()">Expand Map</button>
@@ -75,7 +81,6 @@
 
   <br>
   <br>
-  <h1>List of Stops</h1>
   <br>
   <div id="stopsContainer">
     <!-- Buttons for each stop will be added here by the JavaScript -->

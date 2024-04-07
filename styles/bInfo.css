@@ -367,3 +367,27 @@ h1 {
         /* Increases the width for each button container */
     }
 }
+
+#legend {
+    font-size: medium;
+    display: flex;
+    justify-content: space-between;
+}
+
+#legend span span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+#legend span:nth-child(1) span {
+    background-color: green;
+}
+
+#legend span:nth-child(2) span {
+    background-color: yellow;
+}
+
+#legend span:nth-child(3) span {
+    background-color: red;
+}

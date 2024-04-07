@@ -1,6 +1,23 @@
 var storedRouteDocId = localStorage.getItem('routeDocId');
 
-console.log(storedRouteDocId);
+// Get a reference to the document with the id routeDocId in the busroutes collection
+const docRef = db.collection('busroutes').doc(storedRouteDocId);
+
+// Get the document
+docRef.get().then((doc) => {
+    if (doc.exists) {
+        // Get the Name field of the document
+        const name = doc.data().Name;
+
+        // Set the text of the h1 tag to the Name field of the document
+        document.getElementById('route-title').textContent = name;
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+});
 
 // Function to create a button for each stop
 function createStopButton(stopName) {
@@ -56,7 +73,7 @@ function populateStops() {
 
                 // Set the square's color based on the value of the selected time field
                 const selectedTime = localStorage.getItem('selectedTime');
-                
+
                 const timeValue = doc.data()[selectedTime.charAt(0).toUpperCase() + selectedTime.slice(1)];
                 if (timeValue === '0') {
                     square.style.backgroundColor = 'green';
