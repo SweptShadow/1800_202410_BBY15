@@ -224,6 +224,11 @@ window.onload = function () {
 function updateTimeOfDay(timeOfDay) {
     localStorage.setItem('selectedTime', timeOfDay);
     populateStops();
+    const existingMap = document.getElementById('stops-map');
+    if (existingMap) {
+        removeStopsMaps();
+        populateStopsMaps();
+    }
 }
 
 function loadImage(timeOfDay) {
