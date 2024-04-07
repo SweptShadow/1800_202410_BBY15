@@ -1,12 +1,22 @@
+#infobox {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #d5d5d5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f1efef; /* Light grey background color */
+  background-color: #f1efef;
+  /* Light grey background color */
   background: url("../images/translink-double-decker.jpg");
-  background-size: 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
 }
 
 .infob {
