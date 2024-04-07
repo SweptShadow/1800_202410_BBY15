@@ -216,7 +216,6 @@ function removeStopsMaps() {
 
 // Call the functions when the window loads
 window.onload = function () {
-    populateStops();
     populateGoogleMaps();
     updateTimeOfDay('morning');
 };
