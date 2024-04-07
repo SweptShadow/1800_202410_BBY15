@@ -2,7 +2,7 @@
   max-width: 800px;
   margin: auto;
   padding: 20px;
-  background-color: #d5d5d5;
+  background-color: rgba(222, 222, 222, 0.8);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -24,12 +24,13 @@ body {
 }
 
 .infob h1 {
-  color: #333;
+  color: #000000;
   margin-bottom: 10px;
+  font-weight: bolder;
 }
 
 .infob p {
-  color: #666;
+  color: #1c1b1b;
   line-height: 1.6;
 }
 

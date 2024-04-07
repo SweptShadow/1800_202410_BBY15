@@ -127,3 +127,14 @@ window.onload = function () {
     populateStops();
     populateGoogleMaps();
 };
+
+function updateTimeOfDay(timeOfDay) {
+    localStorage.setItem('selectedTime', timeOfDay);
+    loadImage(timeOfDay);
+}
+
+function loadImage(timeOfDay) {
+    var imageNumber = '#'; // Replace with the actual number or logic to determine the image number
+    var imageUrl = timeOfDay + 'bus' + imageNumber;
+    document.getElementById('stopsMap').style.backgroundImage = 'url(' + imageUrl + ')';
+}

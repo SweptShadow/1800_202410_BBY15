@@ -15,6 +15,7 @@
     crossorigin="anonymous"></script>
   <!-- Bootstrap icon Library-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- Other libraries go here -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -49,7 +50,29 @@
 
   <div id="stopsMap"></div>
 
+  <div id="todRadio" class="radio-container">
+    <div class="radio-button-container">
+      <input type="radio" id="morning" name="timeOfDay" value="morning" onclick="updateTimeOfDay('morning (5am-10am)')">
+      <label for="morning"><i class="bi bi-brightness-alt-high"></i>Morning<br>(5am-10am)</label>
+    </div>
 
+    <div class="radio-button-container">
+      <input type="radio" id="midday" name="timeOfDay" value="midday" onclick="updateTimeOfDay('midday (10am-4pm)')">
+      <label for="midday"><i class="bi bi-sun"></i> Midday<br>(10am-4pm)</label>
+    </div>
+
+    <div class="radio-button-container">
+      <input type="radio" id="evening" name="timeOfDay" value="evening" onclick="updateTimeOfDay('evening (4pm-9pm)')">
+      <label for="evening"><i class="bi bi-moon-stars"></i> Evening<br>(4pm-9pm)</label>
+    </div>
+
+    <div class="radio-button-container">
+      <input type="radio" id="night" name="timeOfDay" value="night" onclick="updateTimeOfDay('night (9pm-5am)')">
+      <label for="night"><i class="bi bi-moon"></i> Night<br>(9pm-5am)</label>
+    </div>
+  </div>
+
+  <br>
   <br>
   <h1>List of Stops</h1>
   <br>
