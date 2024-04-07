@@ -75,6 +75,7 @@ function populateGoogleMaps() {
 }
 
 function populateStopsMaps() {
+    var storedTimeOfDay = localStorage.getItem('selectedTime');
     // Get the container
     const stopsMapContainer = document.getElementById('stopsMap');
 
@@ -87,14 +88,55 @@ function populateStopsMaps() {
 
     // If the map is not loaded, proceed with loading the map
     let stopsMapHTML;
+
     if (storedRouteDocId === "bus25Data") {
-        stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/025.png" alt="Map of busy stops for Bus #222">`;
+
+        stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/025.png" alt="Map of busy stops for Bus #025">`;
+
     } else if (storedRouteDocId === "bus110Data") {
-        stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/110.png" alt="Map of busy stops for Bus #222">`;
+
+        if (storedTimeOfDay === 'morning') {
+
+            stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/110Morning.png" alt="Map of busy stops for Bus #110 morning hours">`;
+
+        } else if (storedTimeOfDay === 'midday') {
+
+            stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/110Afternoon.png" alt="Map of busy stops for Bus #110 mid-day hours">`;
+
+        } else if (storedTimeOfDay === 'evening') {
+
+            stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/110Evening.png" alt="Map of busy stops for Bus #110 evening hours">`;
+
+        } else {
+
+            stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/110Night.png" alt="Map of busy stops for Bus #110 night hours">`;
+
+        }
+
     } else if (storedRouteDocId === "bus130Data") {
-        stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/130.png" alt="Map of busy stops for Bus #222">`;
+
+        stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/130.png" alt="Map of busy stops for Bus #130">`;
+
     } else if (storedRouteDocId === "bus222Data") {
-        stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/222.png" alt="Map of busy stops for Bus #222">`;
+
+        if (storedTimeOfDay === 'morning') {
+
+            stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/222Morning.png" alt="Map of busy stops for Bus #222 morning hours">`;
+
+        } else if (storedTimeOfDay === 'midday') {
+
+            stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/222Afternoon.png" alt="Map of busy stops for Bus #222 mid-day hours">`;
+
+        } else if (storedTimeOfDay === 'evening') {
+
+            stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/222Evening.png" alt="Map of busy stops for Bus #222 evening hours">`;
+
+        } else {
+
+            stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/222Night.png" alt="Map of busy stops for Bus #222 night hours">`;
+
+        }
+
     }
 
     if (stopsMapHTML) {
