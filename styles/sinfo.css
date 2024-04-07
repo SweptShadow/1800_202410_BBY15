@@ -1,0 +1,382 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: url("../images/translink-double-decker.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+input[type="text"],
+button {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+.icon-container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.search-bar {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.search-bar button {
+  padding: 8px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.burger-menu {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease-in-out;
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+#menu li {
+  padding: 15px;
+  text-align: center;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.footer a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.footer a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
+
+.container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.container button {
+  margin-bottom: 20px;
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container h5 {
+  margin-top: 20px;
+}
+
+.button-30 {
+  height: 10vh;
+  width: 80vw;
+  align-items: center;
+  appearance: none;
+  background-color: #3f51b5;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2c3d9f 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s, transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #2c3d9f 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2c3d9f 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2c3d9f 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.button-7 {
+  background-color: #1f1f65;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-7:hover,
+.button-7:focus {
+  background-color: #1d1dab;
+}
+
+.button-7:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-7:active {
+  background-color: rgb(33, 90, 140);
+  box-shadow: none;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+  filter: brightness(80%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#stopsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* Adjust the space between buttons */
+  padding: 20px;
+  /* Add some padding around the container */
+}
+
+iframe {
+  display: block;
+  max-width: 100%;
+  width: 90vw;
+  height: 450px;
+  /* Centers the iframe and adds space around it */
+  border: 1px solid #ccc;
+  /* Adds a light border around the iframe */
+  border-radius: 8px;
+  /* Optional: Rounds the corners of the iframe */
+}
+
+#iframeBorder {
+  display: block;
+  max-width: 600px;
+  width: 90vw;
+  height: 458px;
+  /* Adjust the height as needed */
+  margin: 20px auto;
+  /* Centers the iframe and adds space around it */
+  border: 4px solid #1f1f65;
+  /* A solid, dark border for visibility */
+  border-radius: 8px;
+  /* Rounds the corners of the iframe */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Adds a subtle shadow */
+}
+
+#stops-map {
+  display: block;
+  max-width: 100%;
+  width: 90vw;
+  height: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+
+  text-align: center;
+  /* color: #ffffff; */
+  color: #333;
+  /* Dark text for contrast */
+  margin-top: 10px;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  background-color: rgba(219, 219, 219, 0.7);
+  /* Semi-transparent white background */
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+
+}
+
+#imgButtons {
+  display: flex;
+  justify-content: center;
+}
+
+#expand-map {
+  margin-right: 20px;
+}
+
+.radio-container {
+  display: flex;
+  justify-content: space-around;
+  transform: scale(1.01);
+  flex-wrap: wrap;
+}
+
+.radio-button-container {
+  text-align: center;
+  margin: 10px;
+  flex: 0 0 22%;
+  /* Sets the base width for each button container */
+}
+
+.radio-button-container input[type="radio"] {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transform: scale(1.75);
+}
+
+.radio-button-container label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 125%;
+}
+
+.bi {
+  margin-right: 5px;
+  font-size: 250%;
+}
+
+#todRadio {
+  margin-top: 10px;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  background-color: rgba(219, 219, 219, 0.7);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .radio-button-container {
+    flex: 0 0 48%;
+    /* Increases the width for each button container */
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.review {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}

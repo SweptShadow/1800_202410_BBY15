@@ -26,76 +26,56 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <!-- Link to styles of your own -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="styles/bInfo.css">
+  <link rel="stylesheet" href="styles/sinfo.css">
 
 </head>
 
 <body>
   <nav id="navbarPlaceholder"></nav>
-  <br>
-  <h1>Route Map</h1>
-  <br>
-  <div id="iframeBorder">
-    <div id="iframeContainer"></div>
-  </div>
-  <br>
-  <h1>Busy Stops</h1>
-  <br>
-  <!-- <div id="stopsMap"></div> -->
 
-  <div id="imgButtons">
-    <button id="expand-map" class="button-7" role="button" onclick="populateStopsMaps()">Expand Map</button>
-    <button id="close-map" class="button-7" role="button" onclick="removeStopsMaps()">Close Map</button>
+  <div class="container">
+    <h1>Stop Information: <span id="stopName">this stop</span></h1>
+    <div class="position-relative">
+      <!-- Assuming there's an image related to the stop -->
+      <img class="stop-img responsive" src="" alt="Stop photo">
+      <button class="btn btn-primary position-absolute bottom-0 end-0 m-3" onclick="redirectToReview()">Write
+        Review</button>
+    </div>
+    <!-- Container for reviews will go here -->
+    <div id="reviewsContainer"></div>
   </div>
 
-  <div id="stopsMap"></div>
-
-  <div id="todRadio" class="radio-container">
-    <div class="radio-button-container">
-      <input type="radio" id="morning" name="timeOfDay" value="morning" onclick="updateTimeOfDay('morning (5am-10am)')">
-      <label for="morning"><i class="bi bi-brightness-alt-high"></i>Morning<br>(5am-10am)</label>
-    </div>
-
-    <div class="radio-button-container">
-      <input type="radio" id="midday" name="timeOfDay" value="midday" onclick="updateTimeOfDay('midday (10am-4pm)')">
-      <label for="midday"><i class="bi bi-sun"></i> Midday<br>(10am-4pm)</label>
-    </div>
-
-    <div class="radio-button-container">
-      <input type="radio" id="evening" name="timeOfDay" value="evening" onclick="updateTimeOfDay('evening (4pm-9pm)')">
-      <label for="evening"><i class="bi bi-moon-stars"></i> Evening<br>(4pm-9pm)</label>
-    </div>
-
-    <div class="radio-button-container">
-      <input type="radio" id="night" name="timeOfDay" value="night" onclick="updateTimeOfDay('night (9pm-5am)')">
-      <label for="night"><i class="bi bi-moon"></i> Night<br>(9pm-5am)</label>
+  <div class="container">
+    <h2>Reviews:</h2>
+    <div id="details-go-here"></div>
+    <!-- Here is the container for cards with horizontal scrolling -->
+    <div class="card-container">
+      <div id="reviewCardGroup" class="row row-cols-auto">
+        <!-- Add your card templates here -->
+      </div>
     </div>
   </div>
 
-  <br>
-  <br>
-  <h1>List of Stops</h1>
-  <br>
-  <div id="stopsContainer">
-    <!-- Buttons for each stop will be added here by the JavaScript -->
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  
-
-  <!-- Template for stop buttons -->
-  <template id="stopButtonTemplate">
-    <button class="stop-button button-30" role="button"></button>
+  <template id="reviewCardTemplate">
+    <div class="card bg-secondary">
+      <div class="card-body bg-light">
+        <h5 class="title">Review for <span class="route-name">Route Name</span></h5>
+        <p class="busy-status">How busy is the route? <span class="busy-level">placeholder</span></p>
+        <p class="recommendation">Would you recommend the route at this time? <span
+            class="recommend-status">placeholder</span></p>
+        <p class="review-time">Time of Review: <span class="time-of-review">placeholder</span></p>
+      </div>
+    </div>
   </template>
+
+
 
   <nav id="footerPlaceholder"></nav>
 
   <script src="./scripts/firebaseAPI_BWS.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/userlocation.js"></script>
-  <script src="./scripts/eachBusInfo.js"></script>
+  <script src="./scripts/eachstopinfo.js"></script>
 
 </body>
 
