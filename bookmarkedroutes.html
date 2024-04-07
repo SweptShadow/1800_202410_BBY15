@@ -38,9 +38,26 @@
   <div class="one" id="page-title">
     <h1>Bookmarked Routes</h1>
     <br>
-    <br>
-    <br>
   </div>
+
+  <div class="container">
+    <h2>Bookmarks:</h2>
+    <div id="details-go-here"></div>
+    <!-- Here is the container for cards with horizontal scrolling -->
+    <div class="card-container">
+      <div id="bookmarkCardGroup" class="row row-cols-auto">
+        <!-- Add your card templates here -->
+      </div>
+    </div>
+  </div>
+  <template id="bookmarkCardTemplate">
+    <div class="card bg-secondary">
+      <img class="card-img-top">
+      <div class="card-body bg-light">
+        <h5 class="title">placeholder</h5>
+      </div>
+    </div>
+  </template>
 
   <nav id="footerPlaceholder"></nav>
 
@@ -48,6 +65,7 @@
   <script src="./scripts/landingScript.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/userlocation.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', populateBookmarks);</script>
 
 </body>
 

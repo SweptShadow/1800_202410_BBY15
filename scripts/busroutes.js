@@ -87,6 +87,7 @@ function saveBookmark(busId) {
         .then(() => {
           console.log('Bookmark removed successfully');
           document.getElementById('save-' + busId).innerText = 'bookmark_border';
+          populateBookmarks();
         })
         .catch((error) => {
           console.error('Error removing bookmark: ', error);
