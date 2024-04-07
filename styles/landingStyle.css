@@ -226,7 +226,7 @@ li {
   padding-bottom: 5px;
 }
 
-.one h1:before {
+/* .one h1:before {
   width: 28px;
   height: 5px;
   display: block;
@@ -248,7 +248,7 @@ li {
   left: 50%;
   margin-left: -50px;
   background-color: #2c3d9f;
-}
+} */
 
 @media screen and (min-width: 768px) {
   body {
