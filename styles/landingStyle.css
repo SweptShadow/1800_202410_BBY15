@@ -255,3 +255,8 @@ li {
     background-position: center center;
   }
 }
+
+.bi {
+  margin-right: 5px;
+  font-size: 125%;
+}

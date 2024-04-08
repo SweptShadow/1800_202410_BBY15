@@ -273,6 +273,7 @@ h1 em {
 
 .material-icons {
   cursor: pointer;
+  font-size: 200%;
 }
 
 .card-container {
@@ -283,4 +284,13 @@ h1 em {
   transform: scale(1.1);
   filter: brightness(80%);
   transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.bi {
+  margin-right: 5px;
+  font-size: 150%;
+}
+
+.card-button-container {
+  display: flex;
 }

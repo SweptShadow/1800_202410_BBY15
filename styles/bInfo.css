@@ -345,9 +345,21 @@ h1 {
     font-size: 125%;
 }
 
-.bi {
+.bi-brightness-alt-high {
     margin-right: 5px;
-    font-size: 250%;
+    font-size: 300%;
+}
+.bi-sun {
+    margin-right: 5px;
+    font-size: 300%;
+}
+.bi-moon-stars {
+    margin-right: 5px;
+    font-size: 300%;
+}
+.bi-moon {
+    margin-right: 5px;
+    font-size: 300%;
 }
 
 #todRadio {
