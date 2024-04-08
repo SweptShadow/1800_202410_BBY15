@@ -294,3 +294,9 @@ h1 em {
 .card-button-container {
   display: flex;
 }
+
+.routecard {
+  width: 100%;
+  background-color: rgba(195, 195, 195, 0.7);
+  margin-bottom: 20px; /* Adjust this value as needed to increase the gap */
+}
