@@ -30,10 +30,10 @@ function populateReviews() {
       const reviewCard = reviewCardTemplate.cloneNode(true);
 
       // Populate the card with review data
-      reviewCard.querySelector('.route-name').textContent = review.routeName;
+      reviewCard.querySelector('.route-name').textContent = review.stop;
       reviewCard.querySelector('.busy-level').textContent = review.busy;
       reviewCard.querySelector('.recommend-status').textContent = review.recommend ? 'Yes' : 'No';
-      reviewCard.querySelector('.time-of-review').textContent = review.time;
+      reviewCard.querySelector('.time-of-review').textContent = review.timestamp.toDate();
 
       // Append the populated card to the review card group
       reviewCardGroup.appendChild(reviewCard);
