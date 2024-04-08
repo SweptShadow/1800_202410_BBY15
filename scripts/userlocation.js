@@ -31,9 +31,9 @@ firebase.auth().onAuthStateChanged((user) => {
 
     };
 
-    if (!navigator.geolocation) {
-      throw new Error("No geolocation available");
-    }
+    // if (!navigator.geolocation) {
+    //   throw new Error("No geolocation available");
+    // }
 
     navigator.geolocation.watchPosition(success, error, options);
   }

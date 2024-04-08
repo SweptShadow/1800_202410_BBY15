@@ -1,5 +1,5 @@
 var storedRouteDocId = localStorage.getItem('routeDocId');
-var storedStopDocId = localStorage.getItem('stopDocID');
+// var storedStopDocId = localStorage.getItem('stopDocID');
 console.log(storedRouteDocId + ' ' + storedStopDocId);
 
 function getRouteName(id) {

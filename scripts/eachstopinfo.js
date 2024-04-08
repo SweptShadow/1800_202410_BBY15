@@ -14,8 +14,14 @@ function createStopButton(stopName) {
 function populateStops() {
   const stopsContainer = document.getElementById('stopsContainer');
   const stopButtonTemplate = document.getElementById('stopButtonTemplate').content;
+  const stopNameSpan = document.getElementById('stopName'); // Get the span element
 
   if (storedRouteDocId) {
+    if (typeof stopDocId !== 'undefined') {
+      stopNameSpan.textContent = storedRouteDocId; // Populate the span with stopDocId
+    } else {
+      console.error('stopDocId is not defined.');
+    }
     const stopsRef = db.collection('busroutes').doc(storedRouteDocId).collection('stops');
     stopsRef.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
