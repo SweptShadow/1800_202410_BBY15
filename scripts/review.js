@@ -1,7 +1,9 @@
-var routeDocID = localStorage.getItem("routeDocID");    //visible to all functions on this page
+var storedRouteDocId = localStorage.getItem('routeDocId');
+var storedStopDocId = localStorage.getItem('stopDocID');
+console.log(storedRouteDocId + ' ' + storedStopDocId);
 
 function getRouteName(id) {
-  db.collection("routes")
+  db.collection("busroutes")
     .doc(id)
     .get()
     .then((thisRoute) => {
@@ -10,7 +12,7 @@ function getRouteName(id) {
     });
 }
 
-getRouteName(routeDocID);
+getRouteName(storedRouteDocId);
 
 //Add this JavaScript code to make stars clickable
 //Select all elements with the class name "star" and store them in the "stars" variable
@@ -36,9 +38,9 @@ function writeReview() {
     var currentUser = db.collection("users").doc(user.uid);
     var userID = user.uid;
 
-    const reviewsRef = db.collection('busroutes').doc(currentRoute)
-      .collection('stops').doc(currentStop).collection('reviews').add({
-        routeDocID: routeDocID,
+    const reviewsRef = db.collection('busroutes').doc(storedRouteDocId)
+      .collection('stops').doc(storedStopDocId).collection('reviews').add({
+        storedRouteDocId: storedRouteDocId,
         userID: userID,
         busy: routeBusy,
         recommend: routeRecommend,
