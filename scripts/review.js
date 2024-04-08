@@ -9,7 +9,7 @@ function getRouteName(id) {
     .get()
     .then((thisRoute) => {
       var routeName = thisRoute.data().name;
-      document.getElementById("routeName").innerHTML = routeName;
+      document.getElementById("routeName").innerHTML = storedStopDocId;
     });
 }
 
