@@ -32,21 +32,28 @@
 
 <body>
   <nav id="navbarPlaceholder"></nav>
-
+  <br>
   <div class="container">
     <h1>Stop Information: <span id="stopName">this stop</span></h1>
+    <br>
     <div class="position-relative">
       <!-- Assuming there's an image related to the stop -->
-      <img class="stop-img responsive" src="" alt="Stop photo">
-      <button class="btn btn-primary position-absolute bottom-0 end-0 m-3" onclick="redirectToReview()">Write
-        Review</button>
+      <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary" onclick="redirectToReview()">Write Review</button>
+      </div>
+
     </div>
     <!-- Container for reviews will go here -->
+    <br>
     <div id="reviewsContainer"></div>
+    <br>
+
   </div>
 
-  <div class="container">
-    <h2>Reviews:</h2>
+  <div class="review-container">
+    <br>
+    <h1>Reviews:</h1>
+    <br>
     <div id="details-go-here"></div>
     <!-- Here is the container for cards with horizontal scrolling -->
     <div class="card-container">

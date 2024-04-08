@@ -260,3 +260,16 @@ li {
   margin-right: 5px;
   font-size: 125%;
 }
+
+#review-form {
+  border-radius: 10px;
+  background-color: rgba(230, 230, 230, 0.7);
+}
+
+label {
+  color: black;
+}
+
+.space {
+  background-color: rgba(0, 0, 0, 0.1);
+}

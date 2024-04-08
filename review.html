@@ -12,11 +12,13 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- Bootstrap icon Library-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <!-- Boostrap Library JS CDN  go here -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <!-- Other libraries go here -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -35,54 +37,86 @@
 <body>
   <nav id="navbarPlaceholder"></nav>
 
-  <!--code from demo-->
-  <div class="container">
+  <br>
+  <!--heavily modded code from demo-->
+  <div class="container" id="review-form">
     <br>
-    <h1>Review for <span id="routeName"> Route Name</span></h1>
-    <br>
+    <h1><b>Review for <span id="routeName"> Route Name</span></b></h1>
     <form onsubmit="event.preventDefault(); writeReview();">
 
       <div class="form-group">
         <div class="form-group">
-          <label>How busy is the route?</label>
-          <input type="radio" id="veryBusy" name="busy" value="very busy">
-          <label for="veryBusy">Very Busy</label>
-          <input type="radio" id="busy" name="busy" value="busy">
-          <label for="busy">Busy</label>
-          <input type="radio" id="notBusy" name="busy" value="not busy">
-          <label for="notBusy">Not Busy</label>
+          <label>How busy is the route?</label><br><br>
+          <div class="d-flex align-items-center justify-content-center mb-3">
+            <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+              <input type="radio" id="veryBusy" name="busy" value="very busy"><br>
+              <i class="fas fa-bus-alt"></i>
+              <label for="veryBusy">Very Busy</label>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+              <input type="radio" id="busy" name="busy" value="busy"><br>
+              <i class="fas fa-bus"></i>
+              <label for="busy">Busy</label>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+              <input type="radio" id="notBusy" name="busy" value="not busy"><Br>
+              <i class="fas fa-shuttle-van"></i>
+              <label for="notBusy">Not Busy</label>
+            </div>
+          </div>
         </div>
 
-        <br>
         <div class="form-group">
-          <label>Would you recommend the route at this time?</label>
-          <input type="radio" id="recommendYes" name="recommend" value="yes">
-          <label for="recommendYes">Yes</label>
-          <input type="radio" id="recommendNo" name="recommend" value="no">
-          <label for="recommendNo">No</label>
-        </div>
+          <label>Would you recommend the route at this time?</label><br><br>
+          <div class="d-flex align-items-center justify-content-center mb-3">
+            <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+              <input type="radio" id="recommendYes" name="recommend" value="yes"><br>
+              <i class="bi bi-hand-thumbs-up-fill"></i>
+              <label for="recommendYes">Yes</label>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+              <input type="radio" id="recommendNo" name="recommend" value="no"><br>
+              <i class="bi bi-hand-thumbs-down-fill"></i>
+              <label for="recommendNo">No</label>
+            </div>
+          </div>
 
-        <br>
-        <div class="form-group">
-          <label>Time of Review</label>
-          <input type="radio" id="morning" name="time" value="morning">
-          <label for="morning">Morning</label>
-          <input type="radio" id="afternoon" name="time" value="afternoon">
-          <label for="afternoon">Afternoon</label>
-          <input type="radio" id="evening" name="time" value="evening">
-          <label for="evening">Evening</label>
-          <input type="radio" id="night" name="time" value="night">
-          <label for="night">Night</label>
-        </div>
-
-        <br>
-        <div class="d-flex justify-content-end">
-          <button type="submit" class="btn btn-lg btn-primary mx-auto d-block">Submit Review</button>
-        </div>
-      </div>
+          <div class="form-group">
+            <label>Time of Review</label><br><br>
+            <div class="d-flex align-items-center justify-content-center mb-3">
+              <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+                <input type="radio" id="morning" name="time" value="morning"><br>
+                <i class="bi bi-brightness-alt-high"></i>
+                <label for="morning">Morning</label>
+              </div>
+              <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+                <input type="radio" id="afternoon" name="time" value="afternoon"><br>
+                <i class="bi bi-sun"></i>
+                <label for="afternoon">Afternoon</label>
+              </div>
+              <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+                <input type="radio" id="evening" name="time" value="evening"><br>
+                <i class="bi bi-moon-stars"></i>
+                <label for="evening">Evening</label>
+              </div>
+              <div class="d-flex flex-column align-items-center justify-content-center mb-3">
+                <input type="radio" id="night" name="time" value="night"><br>
+                <i class="bi bi-moon"></i>
+                <label for="night">Night</label>
+              </div>
+            </div>
+            <br>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-lg btn-primary mx-auto d-block">Submit Review</button>
+            </div>
+          </div>
     </form>
 
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <nav id="footerPlaceholder"></nav>
 

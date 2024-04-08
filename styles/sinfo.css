@@ -126,6 +126,15 @@ li {
   max-width: 960px;
   margin: auto;
   padding: 20px;
+  background-color: rgba(230, 230, 230, 0.7);
+}
+
+.review-container {
+  background-color: rgba(230, 230, 230, 0.7);
+}
+
+.reviewsContainer {
+  background-color: rgba(230, 230, 230, 0.7);
 }
 
 .container h1 {
