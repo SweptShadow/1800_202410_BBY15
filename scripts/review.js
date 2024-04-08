@@ -30,9 +30,6 @@ function writeReview() {
   console.log("inside write review");
   let routeBusy = document.getElementById("busy").value;
   let routeRecommend = document.querySelector('input[name="recommend"]:checked').value;
-  // let reviewTime = document.getElementById("time").value;
-
-  console.log(routeBusy, routeRecommend);
 
   var user = firebase.auth().currentUser;
   if (user) {
@@ -41,12 +38,11 @@ function writeReview() {
 
     const reviewsRef = db.collection('busroutes').doc(storedRouteDocId)
       .collection('stops').doc(storedStopDocId).collection('reviews').add({
-        storedRouteDocId: storedRouteDocId,
+        stopRoute: storedRouteDocId,
+        stop: storedStopDocId,
         userID: userID,
         busy: routeBusy,
         recommend: routeRecommend,
-        // time: reviewTime,
-        // rating: routeRating,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       }).then(() => {
         window.location.href = "thanks.html";
