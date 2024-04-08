@@ -1,57 +1,7 @@
-var storedRouteDocId = localStorage.getItem('stopDocId');
+var storedRouteDocId = localStorage.getItem('routeDocId');
+var storedStopDocId = localStorage.getItem('stopDocId');
 
 console.log(storedRouteDocId);
-
-// Function to create a button for each stop
-function createStopButton(stopName) {
-  const button = document.createElement('button');
-  button.classList.add('stop-button');
-  button.textContent = stopName;
-  return button;
-}
-
-// Function to populate the stops
-function populateStops() {
-  const stopsContainer = document.getElementById('stopsContainer');
-  const stopButtonTemplate = document.getElementById('stopButtonTemplate').content;
-  const stopNameSpan = document.getElementById('stopName'); // Get the span element
-
-  if (storedRouteDocId) {
-    if (typeof stopDocId !== 'undefined') {
-      stopNameSpan.textContent = storedRouteDocId; // Populate the span with stopDocId
-    } else {
-      console.error('stopDocId is not defined.');
-    }
-    const stopsRef = db.collection('busroutes').doc(storedRouteDocId).collection('stops');
-    stopsRef.get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        const stopButton = stopButtonTemplate.querySelector('button').cloneNode(true);
-        stopButton.textContent = doc.id;
-        stopsContainer.appendChild(stopButton);
-      });
-    }).catch((error) => {
-      console.error("Error getting documents: ", error);
-    });
-  } else {
-    console.error('No storedRouteDocId found in local storage.');
-  }
-}
-
-// Call the functions when the window loads
-window.onload = function () {
-  populateStops();
-};
-
-function updateTimeOfDay(timeOfDay) {
-  localStorage.setItem('selectedTime', timeOfDay);
-  loadImage(timeOfDay);
-}
-
-function loadImage(timeOfDay) {
-  var imageNumber = '#'; // Replace with the actual number or logic to determine the image number
-  var imageUrl = timeOfDay + 'bus' + imageNumber;
-  document.getElementById('stopsMap').style.backgroundImage = 'url(' + imageUrl + ')';
-}
 
 function redirectToReview() {
   // Get the URL from the search bar
@@ -64,14 +14,11 @@ function redirectToReview() {
   window.location.href = 'review.html';
 }
 
-// Add this event listener to the button in your eachstopinfo.html
-document.getElementById('writeReviewButton').addEventListener('click', redirectToReview);
-
 
 function populateReviews() {
   // Reference to the Firestore collection where reviews are stored
-  const reviewsRef = db.collection('busroutes').doc(currentRoute)
-    .collection('stops').doc(currentStop).collection('reviews');
+  const reviewsRef = db.collection('busroutes').doc(storedRouteDocId)
+    .collection('stops').doc(storedStopDocId).collection('reviews');
 
   // Get the reviews from Firestore
   reviewsRef.get().then((querySnapshot) => {
@@ -98,8 +45,7 @@ function populateReviews() {
 populateReviews();
 
 function populateStopName() {
-  //Retrieve the stop name from local storage using the key 'stopDocId'
-  var stopName = localStorage.getItem('stopDocId');
+  //Retrieve the stop name from local storage using the key 'stopDocId';
 
   //Check if the stopName is not null or undefined
   if (stopName) {
@@ -107,7 +53,7 @@ function populateStopName() {
     var spanElement = document.getElementById('stopName');
 
     //Update the text content of the span element
-    spanElement.textContent = stopName;
+    spanElement.textContent = storedStopDocId;
   } else {
     console.log('No stop name found in local storage.');
   }
