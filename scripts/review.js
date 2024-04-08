@@ -1,4 +1,5 @@
 var storedRouteDocId = localStorage.getItem('routeDocId');
+var storedStopDocId = localStorage.getItem('stopDocId');
 // var storedStopDocId = localStorage.getItem('stopDocID');
 console.log(storedRouteDocId + ' ' + storedStopDocId);
 
@@ -29,9 +30,9 @@ function writeReview() {
   console.log("inside write review");
   let routeBusy = document.getElementById("busy").value;
   let routeRecommend = document.querySelector('input[name="recommend"]:checked').value;
-  let reviewTime = document.getElementById("time").value;
+  // let reviewTime = document.getElementById("time").value;
 
-  console.log(routeBusy, routeRecommend, reviewTime, routeRating);
+  console.log(routeBusy, routeRecommend);
 
   var user = firebase.auth().currentUser;
   if (user) {
@@ -44,8 +45,8 @@ function writeReview() {
         userID: userID,
         busy: routeBusy,
         recommend: routeRecommend,
-        time: reviewTime,
-        rating: routeRating,
+        // time: reviewTime,
+        // rating: routeRating,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       }).then(() => {
         window.location.href = "thanks.html";
