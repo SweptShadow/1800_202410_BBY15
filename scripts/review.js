@@ -36,17 +36,18 @@ function writeReview() {
     var currentUser = db.collection("users").doc(user.uid);
     var userID = user.uid;
 
-    db.collection("reviews").add({
-      routeDocID: routeDocID,
-      userID: userID,
-      busy: routeBusy,
-      recommend: routeRecommend,
-      time: reviewTime,
-      rating: routeRating,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    }).then(() => {
-      window.location.href = "thanks.html";
-    });
+    const reviewsRef = db.collection('busroutes').doc(currentRoute)
+      .collection('stops').doc(currentStop).collection('reviews').add({
+        routeDocID: routeDocID,
+        userID: userID,
+        busy: routeBusy,
+        recommend: routeRecommend,
+        time: reviewTime,
+        rating: routeRating,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(() => {
+        window.location.href = "thanks.html";
+      });
   } else {
     console.log("No user is signed in");
     window.location.href = 'review.html';
