@@ -28,8 +28,9 @@ stars.forEach((star, index) => {
 
 function writeReview() {
   console.log("inside write review");
-  let routeBusy = document.getElementById("busy").value;
+  let routeBusy = document.querySelector('input[name="busy"]:checked').value;
   let routeRecommend = document.querySelector('input[name="recommend"]:checked').value;
+  let reviewTime = document.querySelector('input[name="time"]:checked').value;
 
   var user = firebase.auth().currentUser;
   if (user) {
@@ -44,7 +45,8 @@ function writeReview() {
         // username: db.collection("users").doc(userID).name,
         busy: routeBusy,
         recommend: routeRecommend,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        time: reviewTime
       }).then(() => {
         window.location.href = "thanks.html";
       });
