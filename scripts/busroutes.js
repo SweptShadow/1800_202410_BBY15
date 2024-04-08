@@ -171,5 +171,6 @@ function searchFirebase() {
 function saveRouteDocID(routeDocID) {
   localStorage.setItem('routeDocId', routeDocID);
   alert("stored");
-  window.location.href = 'eachbusinfo.html?busRoutesDocID=bus222'
+  // window.location.href = 'eachbusinfo.html?busRoutesDocID=bus222'
+  window.location.href = 'eachbusinfo.html'
 }
