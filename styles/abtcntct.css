@@ -49,18 +49,6 @@ a:hover {
   padding-bottom: 5px;
 }
 
-.one h1:before {
-  width: 28px;
-  height: 5px;
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  left: 50%;
-  margin-left: -14px;
-  background-color: #2c3d9f;
-}
-
 .one h1:after {
   width: 100px;
   height: 1px;
