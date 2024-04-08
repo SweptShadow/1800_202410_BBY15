@@ -94,5 +94,23 @@ function populateReviews() {
   });
 }
 
-// Call this function when you want to populate the reviews
+//Call this function when you want to populate the reviews
 populateReviews();
+
+function populateStopName() {
+  //Retrieve the stop name from local storage using the key 'stopDocId'
+  var stopName = localStorage.getItem('stopDocId');
+
+  //Check if the stopName is not null or undefined
+  if (stopName) {
+    //Find the span element by its ID
+    var spanElement = document.getElementById('stopName');
+
+    //Update the text content of the span element
+    spanElement.textContent = stopName;
+  } else {
+    console.log('No stop name found in local storage.');
+  }
+}
+//Call the function to populate the span when needed
+populateStopName();
