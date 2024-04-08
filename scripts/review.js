@@ -41,6 +41,7 @@ function writeReview() {
         stopRoute: storedRouteDocId,
         stop: storedStopDocId,
         userID: userID,
+        // username: db.collection("users").doc(userID).name,
         busy: routeBusy,
         recommend: routeRecommend,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()

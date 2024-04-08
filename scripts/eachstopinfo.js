@@ -35,8 +35,8 @@ function populateReviews() {
       reviewCard.querySelector('.busy-level').textContent = review.busy;
       reviewCard.querySelector('.recommend-status').textContent = review.recommend ? 'Yes' : 'No';
       reviewCard.querySelector('.time-of-review').textContent = review.timestamp.toDate();
-      // reviewCard.querySelector('.review-creator').textContent = db.collection('user').doc(reviewCreatorId).data().Name;
-
+      // reviewCard.querySelector('.review-creator').textContent = review.username;
+        
       // Append the populated card to the review card group
       reviewCardGroup.appendChild(reviewCard);
     });
