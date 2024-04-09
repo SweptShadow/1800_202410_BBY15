@@ -51,7 +51,7 @@ function getBookmarks(user) {
                     newcard.querySelector('.route-start').innerHTML = routeStart;
                     newcard.querySelector('.route-end').innerHTML = routeEnd;
                     button.onclick = function () {
-                        window.location.href = 'eachbusinfo.html?busRoutesDocID=bus' + doc.data().Code;
+                        window.location.href = 'eachbusInfo.html?busRoutesDocID=bus' + doc.data().Code;
                         localStorage.setItem('routeDocId', busDocID);
                     };
 
