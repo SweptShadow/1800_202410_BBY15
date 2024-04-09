@@ -36,6 +36,8 @@ function getBookmarks(user) {
                     return;
                 }
 
+                console.log(thisRouteID);
+
                 thisRouteID = thisRouteID + 'Data';
 
                 console.log(thisRouteID);
