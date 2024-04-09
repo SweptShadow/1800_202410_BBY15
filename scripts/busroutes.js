@@ -69,14 +69,14 @@ db.collection("busroutes").get().then((querySnapshot) => {
     button.textContent = 'Bus #' + data.Code;
     button.id = 'bus' + data.Code;
     button.onclick = function () {
-      // window.location.href = 'eachbusinfo.html?busRoutesDocID=bus' + data.Code;
-      window.location.href = 'eachbusinfo.html';
+      window.location.href = 'eachbusInfo.html?busRoutesDocID=bus' + data.Code;
+      // window.location.href = 'eachbusInfo.html';
       localStorage.setItem('routeDocId', busDocID);
     };
     routeStart.textContent = data.Route_start;
     routeEnd.textContent = data.Route_end;
-    // readMore.href = 'eachbusinfo.html?busRoutesDocID=bus' + data.Code;
-    readMore.href = 'eachbusinfo.html';
+    readMore.href = 'eachbusInfo.html?busRoutesDocID=bus' + data.Code;
+    // readMore.href = 'eachbusInfo.html';
     bookmark.id = 'save-bus' + data.Code;
     bookmark.onclick = function () {
       saveBookmark('bus' + data.Code);
@@ -172,5 +172,5 @@ function saveRouteDocID(routeDocID) {
   localStorage.setItem('routeDocId', routeDocID);
   alert("stored");
   // window.location.href = 'eachbusinfo.html?busRoutesDocID=bus222'
-  window.location.href = 'eachbusinfo.html'
+  window.location.href = 'eachbusInfo.html'
 }
