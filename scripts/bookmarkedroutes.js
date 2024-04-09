@@ -32,32 +32,39 @@ function getBookmarks(user) {
             // Iterate through the ARRAY of bookmarked hikes (document ID's)
             bookmarks.forEach(thisRouteID => {
 
-                thisRouteID = thisRouteID + 'Data';
-                
-                console.log(thisRouteID);
-                db.collection("busroutes").doc(thisRouteID).get().then(doc => {
-                    var title = doc.data().Name;
-                    var routeStart = doc.data().Route_start;
-                    var routeEnd = doc.data().Route_end;
-                    var busDocID = "bus" + doc.data().Code + "Data"
-                    
+                if (thisRouteID != "x") {
 
-                    //clone the new card
-                    let newcard = newcardTemplate.content.cloneNode(true);
-                    var button = newcard.querySelector('.button-30');
+                    thisRouteID = thisRouteID + 'Data';
 
-                    //update title and some pertinant information
-                    newcard.querySelector('.card-title').innerHTML = title;
-                    newcard.querySelector('.route-start').innerHTML = routeStart;
-                    newcard.querySelector('.route-end').innerHTML = routeEnd;
-                    button.onclick = function () {
-                        window.location.href = 'eachbusInfo.html?busRoutesDocID=bus' + doc.data().Code;
-                        localStorage.setItem('routeDocId', busDocID);
-                    };
+                    console.log(thisRouteID);
+                    db.collection("busroutes").doc(thisRouteID).get().then(doc => {
+                        // var title = doc.data().Name;
+                        var routeStart = doc.data().Route_start;
+                        var routeEnd = doc.data().Route_end;
+                        var busDocID = "bus" + doc.data().Code + "Data"
+                        var title = doc.data().Name;
 
-                    //Finally, attach this new card to the gallery
-                    routeCardGroup.appendChild(newcard);
-                })
+
+                        //clone the new card
+                        let newcard = newcardTemplate.content.cloneNode(true);
+                        var button = newcard.querySelector('.button-30');
+
+                        //update title and some pertinant information
+                        newcard.querySelector('.card-title').innerHTML = title;
+                        newcard.querySelector('.route-start').innerHTML = routeStart;
+                        newcard.querySelector('.route-end').innerHTML = routeEnd;
+                        button.onclick = function () {
+                            window.location.href = 'eachbusInfo.html?busRoutesDocID=bus' + doc.data().Code;
+                            localStorage.setItem('routeDocId', busDocID);
+                        };
+
+                        //Finally, attach this new card to the gallery
+                        routeCardGroup.appendChild(newcard);
+                    })
+
+                }
+
+
             });
         })
 }
