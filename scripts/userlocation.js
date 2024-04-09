@@ -17,9 +17,11 @@ firebase.auth().onAuthStateChanged((user) => {
     function error(err) {
 
       if (err.code === 1) {
-        alert("Please allow location access");
+        // alert("Please allow location access");
+        return;
       } else {
-        alert("Position Unavailable");
+        // alert("Position Unavailable");
+        return;
       }
 
     }
