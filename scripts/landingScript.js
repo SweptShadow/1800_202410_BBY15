@@ -1,36 +1,28 @@
-// Wait for the DOM to load
-// document.addEventListener('DOMContentLoaded', function() {
-//   // Check if a user is signed in
-//   firebase.auth().onAuthStateChanged(function(user) {
-//     if (user) {
-//       // User is signed in, call populateBookmarks
-//       populateBookmarks(user.uid);
-//     } else {
-//       // No user is signed in.
-//       console.log('No user is signed in');
-//     }
-//   });
-// });
+function doAll() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            getName(user);
+        } else {
+            console.log("No user is signed in");
+        }
+    });
+}
+doAll();
 
-// function populateBookmarks(uid) {
-//   var userDocRef = db.collection('users').doc(uid);
-//   userDocRef.get().then((doc) => {
-//     var data = doc.data();
-//     if (data && data.bookmarks && Array.isArray(data.bookmarks.bookmarks)) {
-//       var bookmarks = data.bookmarks.bookmarks;
-//       var template = document.getElementById('bookmarkCardTemplate');
-//       var container = document.getElementById('bookmarkCardGroup');
-//       container.innerHTML = '';
-//       bookmarks.forEach((bookmark) => {
-//         var clone = template.content.cloneNode(true);
-//         clone.querySelector('.title').textContent = bookmark;
-//         container.appendChild(clone);
-//       });
-//     } else {
-//       console.log('No bookmarks found for the user');
-//     }
-//   })
-//   .catch((error) => {
-//     console.error('Error getting bookmarks: ', error);
-//   });
-// }
+function getName(user) {
+    var docRef = db.collection("users").doc(user.uid);
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            // Get the user's name
+            var name = doc.data().name;
+
+            // Write the user's name into the HTML element with id "welcome"
+            document.getElementById("welcome").innerText = name;
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
