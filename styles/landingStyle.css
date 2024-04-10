@@ -311,3 +311,23 @@ label {
   font-weight: bold;
 
 }
+
+#page-title {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(230, 230, 230, 0.7);
+}
+
+#alerts {
+  max-width: 800px;
+  max-height: 350px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(230, 230, 230, 0.7);
+  text-align: center;
+}
