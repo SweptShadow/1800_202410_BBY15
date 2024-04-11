@@ -30,6 +30,7 @@ function loadSkeleton() {
 }
 loadSkeleton();
 
+//Bookmark toogle function
 function toggleBookmark(busRoutesDocID) {
   if (currentUser) {
     currentUser.get().then(userDoc => {

@@ -32,7 +32,6 @@ firebase.auth().onAuthStateChanged(user => {
 
 //Array of bus data fields and corresponding element IDs (code for offline mode feature which we didn't have time to implement)
 // var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
-
 // busDataFields.forEach(function (field) {
 //   db.collection('busroutes').doc(field)
 //     .get()
@@ -105,7 +104,7 @@ db.collection("busroutes").get().then((querySnapshot) => {
 });
 
 
-//-----------------------------------------------------------------------------
+// MODIFIED DEMO CODE
 // This function is called whenever the user clicks on the "bookmark" icon.
 // It adds the hike to the "bookmarks" array
 // Then it will change the bookmark icon from the hollow to the solid version. 
@@ -142,7 +141,7 @@ function saveBookmark(routeID) {
   });
 }
 
-
+//Search function
 function searchFirebase() {
   const searchTerm = document.getElementById('searchInput').value.trim();
 

@@ -1,6 +1,5 @@
 var storedRouteDocId = localStorage.getItem('routeDocId');
 var storedStopDocId = localStorage.getItem('stopDocId');
-// var storedStopDocId = localStorage.getItem('stopDocID');
 console.log(storedRouteDocId + ' ' + storedStopDocId);
 
 function getRouteName(id) {
@@ -15,17 +14,7 @@ function getRouteName(id) {
 
 getRouteName(storedRouteDocId);
 
-//Add this JavaScript code to make stars clickable
-//Select all elements with the class name "star" and store them in the "stars" variable
-const stars = document.querySelectorAll('.star');
-stars.forEach((star, index) => {
-  star.addEventListener('click', () => {
-    for (let i = 0; i <= index; i++) {
-      document.getElementById(`star${i + 1}`).textContent = 'star';
-    }
-  });
-});
-
+//Write Review function
 function writeReview() {
   console.log("inside write review");
   let routeBusy = document.querySelector('input[name="busy"]:checked').value;
@@ -42,7 +31,6 @@ function writeReview() {
         stopRoute: storedRouteDocId,
         stop: storedStopDocId,
         userID: userID,
-        // username: db.collection("users").doc(userID).name,
         busy: routeBusy,
         recommend: routeRecommend,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),

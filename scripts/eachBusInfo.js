@@ -27,27 +27,6 @@ function createStopButton(stopName) {
   return button;
 }
 
-// Function to populate the stops
-// function populateStops() {
-//   const stopsContainer = document.getElementById('stopsContainer');
-//   const stopButtonTemplate = document.getElementById('stopButtonTemplate').content;
-
-//   if (storedRouteDocId) {
-//     const stopsRef = db.collection('busroutes').doc(storedRouteDocId).collection('stops');
-//     stopsRef.get().then((querySnapshot) => {
-//       querySnapshot.forEach((doc) => {
-//         const stopButton = stopButtonTemplate.querySelector('button').cloneNode(true);
-//         stopButton.textContent = doc.id;
-//         stopsContainer.appendChild(stopButton);
-//       });
-//     }).catch((error) => {
-//       console.error("Error getting documents: ", error);
-//     });
-//   } else {
-//     console.error('No storedRouteDocId found in local storage.');
-//   }
-// }
-
 function populateStops() {
   const stopsContainer = document.getElementById('stopsContainer');
   const stopButtonTemplate = document.getElementById('stopButtonTemplate').content;
@@ -104,7 +83,7 @@ function populateStops() {
 }
 
 
-// Function to populate the iframes  using Google Maps API
+// Function to populate the iframes  using GOOGLE MAPS API
 function populateGoogleMaps() {
 
   if (storedRouteDocId === "bus110Data") {
@@ -147,6 +126,7 @@ function populateGoogleMaps() {
 
 }
 
+//Function to populate stop maps depending on radiobutton and route selected
 function populateStopsMaps() {
   var storedTimeOfDay = localStorage.getItem('selectedTime');
   // Get the container
