@@ -166,6 +166,7 @@ li {
   grid-row-end: 6;
 }
 
+/** Button code taken from: https://getcssscan.com/css-buttons-examples". */
 .button-30 {
   height: 10vh;
   width: 80vw;
@@ -198,15 +199,18 @@ li {
   font-size: 18px;
 }
 
+/** Button code taken from: https://getcssscan.com/css-buttons-examples". */
 .button-30:focus {
   box-shadow: #2c3d9f 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2c3d9f 0 -3px 0 inset;
 }
 
+/** Button code taken from: https://getcssscan.com/css-buttons-examples". */
 .button-30:hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2c3d9f 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
+/** Button code taken from: https://getcssscan.com/css-buttons-examples". */
 .button-30:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
