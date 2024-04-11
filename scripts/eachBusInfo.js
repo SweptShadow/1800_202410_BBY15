@@ -104,7 +104,7 @@ function populateStops() {
 }
 
 
-// Function to populate the iframe
+// Function to populate the iframes  using Google Maps API
 function populateGoogleMaps() {
 
   if (storedRouteDocId === "bus110Data") {
