@@ -164,7 +164,23 @@ function populateStopsMaps() {
 
   if (storedRouteDocId === "bus25Data") {
 
-    stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/025.png" alt="Map of busy stops for Bus #025">`;
+    if (storedTimeOfDay === 'morning') {
+
+      stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/025Morning.png" alt="Map of busy stops for Bus #110 morning hours">`;
+
+    } else if (storedTimeOfDay === 'afternoon') {
+
+      stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/025Afternoon.png" alt="Map of busy stops for Bus #110 mid-day hours">`;
+
+    } else if (storedTimeOfDay === 'evening') {
+
+      stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/025Evening.png" alt="Map of busy stops for Bus #110 evening hours">`;
+
+    } else {
+
+      stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/025Night.png" alt="Map of busy stops for Bus #110 night hours">`;
+
+    }
 
   } else if (storedRouteDocId === "bus110Data") {
 
@@ -188,7 +204,23 @@ function populateStopsMaps() {
 
   } else if (storedRouteDocId === "bus130Data") {
 
-    stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/130.png" alt="Map of busy stops for Bus #130">`;
+    if (storedTimeOfDay === 'morning') {
+
+      stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/130Morning.png" alt="Map of busy stops for Bus #110 morning hours">`;
+
+    } else if (storedTimeOfDay === 'afternoon') {
+
+      stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/130Afternoon.png" alt="Map of busy stops for Bus #110 mid-day hours">`;
+
+    } else if (storedTimeOfDay === 'evening') {
+
+      stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/130Evening.png" alt="Map of busy stops for Bus #110 evening hours">`;
+
+    } else {
+
+      stopsMapHTML = `<img class="draggable" id="stops-map" src="./images/130Night.png" alt="Map of busy stops for Bus #110 night hours">`;
+
+    }
 
   } else if (storedRouteDocId === "bus222Data") {
 
