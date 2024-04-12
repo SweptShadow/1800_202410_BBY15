@@ -71,7 +71,31 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── .git                    # Folder for git repo
 ├── images                  # Folder for images
-    /blah.jpg               # Acknowledge source
+    /025.jpg               # Acknowledge source
+    /025Afternoon.png
+    /025Evening.png
+    /025Morning.png
+    /025Night.png
+    /110Afternoon.png
+    /110Base.png
+    /110Evening.png
+    /110Morning.png
+    /110Night.png
+    /130.png
+    /130Afternoon.png
+    /130Base.png
+    /130Evening.png
+    /130Morning.png
+    /130Night.png
+    /222.png
+    /222Afternoon
+    /222Base.png
+    /222Evening.png
+    /222Morning.png
+    /222Night.png
+    /GuestLogin.png
+    /Logo.png
+    /translink-double-decker.jpg
 ├── scripts                 # Folder for scripts
     /blah.js                # 
 ├── styles                  # Folder for styles
