@@ -27,6 +27,7 @@ function createStopButton(stopName) {
   return button;
 }
 
+// Function to populate the page with its stops
 function populateStops() {
   const stopsContainer = document.getElementById('stopsContainer');
   const stopButtonTemplate = document.getElementById('stopButtonTemplate').content;
@@ -233,7 +234,7 @@ function populateStopsMaps() {
   }
 }
 
-
+// Function to remove the colour coded map from the page
 function removeStopsMaps() {
   // Get the container
   const stopsMapContainer = document.getElementById('stopsMap');
@@ -256,6 +257,7 @@ window.onload = function () {
   updateTimeOfDay('morning');
 };
 
+// Function to update the time to show colour codes for
 function updateTimeOfDay(timeOfDay) {
   localStorage.setItem('selectedTime', timeOfDay);
   populateStops();
@@ -264,10 +266,4 @@ function updateTimeOfDay(timeOfDay) {
     removeStopsMaps();
     populateStopsMaps();
   }
-}
-
-function loadImage(timeOfDay) {
-  var imageNumber = '#'; // Replace with the actual number or logic to determine the image number
-  var imageUrl = timeOfDay + 'bus' + imageNumber;
-  document.getElementById('stopsMap').style.backgroundImage = 'url(' + imageUrl + ')';
 }

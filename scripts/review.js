@@ -2,6 +2,7 @@ var storedRouteDocId = localStorage.getItem('routeDocId');
 var storedStopDocId = localStorage.getItem('stopDocId');
 console.log(storedRouteDocId + ' ' + storedStopDocId);
 
+// Function to get the routes name
 function getRouteName(id) {
   db.collection("busroutes")
     .doc(id)
@@ -14,7 +15,8 @@ function getRouteName(id) {
 
 getRouteName(storedRouteDocId);
 
-//Write Review function
+// MODIFIED DEMO CODE!
+// Write Review function
 function writeReview() {
   console.log("inside write review");
   let routeBusy = document.querySelector('input[name="busy"]:checked').value;

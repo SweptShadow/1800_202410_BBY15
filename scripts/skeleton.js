@@ -1,3 +1,4 @@
+// MODIFIED DEMO CODE!
 function loadSkeleton() {
   $('#navbarPlaceholder').load('./text/navbar.html', function () {
     const menu = document.getElementById('navLinks');

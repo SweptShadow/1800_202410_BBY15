@@ -1,3 +1,4 @@
+// DEMO CODE!
 function doAll() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -9,6 +10,7 @@ function doAll() {
 }
 doAll();
 
+// Function to get the users name
 function getName(user) {
     var docRef = db.collection("users").doc(user.uid);
     docRef.get().then((doc) => {

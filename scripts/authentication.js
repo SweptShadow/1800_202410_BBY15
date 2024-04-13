@@ -1,6 +1,8 @@
 // Initialize the FirebaseUI Widget using Firebase. DEMO CODE!
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
+// DEMO CODE!
+// Signs the user in
 var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
@@ -46,6 +48,8 @@ var uiConfig = {
 };
 ui.start('#firebaseui-auth-container', uiConfig);
 
+// Taken from Firebase documentation
+// Allows user to sign in with anonymous account (aka guest account)
 firebase.auth().signInAnonymously()
   .then(() => {
     // Signed in..

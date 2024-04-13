@@ -1,3 +1,4 @@
+// Function to get the users geolocation
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     function success(pos) {

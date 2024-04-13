@@ -1,4 +1,7 @@
-var currentUser;               //points to the document of the user who is logged in
+var currentUser;
+
+// DEMO CODE!
+// Function to populate the users info
 function populateUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
@@ -35,6 +38,8 @@ function populateUserInfo() {
 //call the function to run it 
 populateUserInfo();
 
+// DEMO CODE!
+// Function to edit the users info
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;

@@ -3,6 +3,7 @@ var storedStopDocId = localStorage.getItem('stopDocId');
 
 console.log(storedRouteDocId);
 
+// Function to redirect user to reviews page
 function redirectToReview() {
   // Get the URL from the search bar
   let params = new URL(window.location.href);
@@ -14,7 +15,8 @@ function redirectToReview() {
   window.location.href = 'review.html';
 }
 
-
+// MODIFIED DEMO CODE!
+// Function to populate the reviews
 function populateReviews() {
   // Reference to the Firestore collection where reviews are stored
   const reviewsRef = db.collection('busroutes').doc(storedRouteDocId)
@@ -42,11 +44,10 @@ function populateReviews() {
   });
 }
 
-//Call this function when you want to populate the reviews
 populateReviews();
 
+// Function to populate the stop name
 function populateStopName() {
-  //Retrieve the stop name from local storage using the key 'stopDocId';
 
   //Check if the stopName is not null or undefined
   if (stopName) {
@@ -59,5 +60,5 @@ function populateStopName() {
     console.log('No stop name found in local storage.');
   }
 }
-//Call the function to populate the span when needed
+
 populateStopName();

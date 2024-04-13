@@ -19,6 +19,7 @@ const db = firebase.firestore();
 
 var currentUser;
 
+// Get the user's ID
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     currentUser = db.collection("users").doc(user.uid); //global
@@ -29,21 +30,6 @@ firebase.auth().onAuthStateChanged(user => {
     window.location.href = "login.html";
   }
 });
-
-//Array of bus data fields and corresponding element IDs (code for offline mode feature which we didn't have time to implement)
-// var busDataFields = ['bus25Data', 'bus110Data', 'bus122Data', 'bus130Data', 'bus222Data'];
-// busDataFields.forEach(function (field) {
-//   db.collection('busroutes').doc(field)
-//     .get()
-//     .then(function (doc) {
-//       var data = doc.data();
-//       var text = '';
-//       for (var key in data) {
-//         text += key + ': ' + data[key] + '\n';
-//       }
-//       document.getElementById(field).innerText = text;
-//     })
-// });
 
 //Get template and container
 var template = document.getElementById('savedCardTemplate');
@@ -167,9 +153,9 @@ function searchFirebase() {
     });
 }
 
+// Function to save the selected routes ID
 function saveRouteDocID(routeDocID) {
   localStorage.setItem('routeDocId', routeDocID);
   alert("stored");
-  // window.location.href = 'eachbusinfo.html?busRoutesDocID=bus222'
   window.location.href = 'eachbusInfo.html'
 }
