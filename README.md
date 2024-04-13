@@ -45,74 +45,87 @@ Content of the project folder:
 
 ```
  Top level of project folder: 
-├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
-├── login.html
-├── landing.html
-├── review.html
-├── setting.html
-├── skeleton.html
-├── thanks.html
-├── translinkalerts.html
-├── userInfo.html
-├── eachstopinfo.html
-├── eachbusInfo.html
-├── busRoutes.html
-├── bookmarkedroutes.html
-├── allmaps.html
-├── abtcntct.html
-├── .firebaserc
-├── firebase.json
-├── firestore.indexes.json
-├── firestore.rules
-└── README.md
+├── .gitignore              # Git ignore file
+├── index.html              # Splash page that pops up when page is visited intially
+├── login.html              # Login page 
+├── landing.html            # Landing page HTML file, this is what users see when you come to url
+├── review.html             # Review form page file
+├── setting.html            # Setting page file
+├── skeleton.html           # Skeleton html file we use to make other pages
+├── thanks.html             # Thanks html file for conformation after submitting a review.
+├── translinkalerts.html    # Trans Link Alerts Page which we had more ambitions for but trnaslinkw ebsite doesn't allow direct embedding
+├── userInfo.html           # User profile page
+├── eachstopinfo.html       # Each bus stop html file which gets populated from information from our db
+├── eachbusInfo.html        # Each bus route html file which gets populated from information from our db
+├── busRoutes.html          # Bus Routes page which populates the list of bus routes in our db
+├── bookmarkedroutes.html   # Bookmarked routes which is populated from user bookmarked routes
+├── allmaps.html            # All route map html file
+├── abtcntct.html           # About Us & Contact Us page combined file
+├── .firebaserc             
+├── firebase.json            
+├── firestore.indexes.json   
+├── firestore.rules          
+└── README.md               # Lots of typing later here we are
 
 
 It has the following subfolders and files:
 ├── .git                    # Folder for git repo
 ├── images                  # Folder for images
-    /025.jpg               # Acknowledge source
-    /025Afternoon.png
-    /025Evening.png
-    /025Morning.png
-    /025Night.png
-    /110Afternoon.png
-    /110Base.png
-    /110Evening.png
-    /110Morning.png
-    /110Night.png
-    /130.png
-    /130Afternoon.png
-    /130Base.png
-    /130Evening.png
-    /130Morning.png
-    /130Night.png
-    /222.png
-    /222Afternoon
-    /222Base.png
-    /222Evening.png
-    /222Morning.png
-    /222Night.png
-    /GuestLogin.png
-    /Logo.png
-    /translink-double-decker.jpg
+    /025.png                # Acknowledge source
+    /025Afternoon.png       # Route 25 Image
+    /025Base.png            # Route 25 Image
+    /025Evening.png         # Route 25 Image
+    /025Morning.png         # Route 25 Image
+    /025Night.png           # Route 25 Image
+    /110Afternoon.png       # Route 110 Image
+    /110Base.png            # Route 110 Image
+    /110Evening.png         # Route 110 Image
+    /110Morning.png         # Route 110 Image
+    /110Night.png           # Route 110 Image
+    /130.png                # Route 130 Image
+    /130Afternoon.png       # Route 130 Image
+    /130Base.png            # Route 130 Image
+    /130Evening.png         # Route 130 Image
+    /130Morning.png         # Route 130 Image
+    /130Night.png           # Route 130 Image
+    /222.png                # Route 222 Image
+    /222Afternoon.png       # Route 222 Image
+    /222Base.png            # Route 222 Image
+    /222Evening.png         # Route 222 Image
+    /222Morning.png         # Route 222 Image
+    /222Night.png           # Route 222 Image
+    /GuestLogin.png         # Guest login icon
+    /Logo.png               # App Logo
+    /translink-double-decker.jpg    # Background image
 ├── scripts                 # Folder for scripts
-    /blah.js                # 
+    /authentication.js      # Authentication JS file
+    /bookmark.js            # Bookmark JS file
+    /busroutes.js           # Bus Routes Page JS file
+    /eachBusInfo.js         # Each bus route loading JS file
+    /eachstopinfo.js        # Each bus stop laoding JS file
+    /firebaseAPI_BWS.js     # firebase initilization
+    /index.js               # index JS file
+    /landingScript.js       # Landing JS file
+    /logoutScript.js        # Logout JS file
+    /review.js              # Review page JS file
+    /skeleton.js            # Skeleton JS file
+    /userInfo.js            # User profile JS file
+    /userlocation.js        # User location tracking JS file
 ├── styles                  # Folder for styles
-    /abtcntct.css           #
-    /allMapsStyle.css       #
-    /bInfo.css              #
-    /index.css              #
-    /landingStle.css        #
-    /loginStyle.css         #
-    /reviewStyle.css        #
-    /routeStyle.css         #
-    /sinfo.css              #
-    /style.css              #
-    /styleSettings.css      #
+    /abtcntct.css           # About Us & Contact Us page
+    /allMapsStyle.css       # All map style css file
+    /bInfo.css              # Each bus info page css file
+    /index.css              # Index css file
+    /landingStyle.css       # Landing Style css file used in most pages
+    /loginStyle.css         # Login page style css file
+    /reviewStyle.css        # Review style css file
+    /routeStyle.css         # Route style css file
+    /sinfo.css              # Each Stop css file
+    /style.css              # Style css file
+    /styleSettings.css      # Settings css file
 ├── text                    # Folder for navbar and footer
-    /footer.html            #
-    /navbar.html            #
+    /footer.html            # Sticky fixed footer which contains navigaton buttons
+    /navbar.html            # Navbar which contains logo which links to landing page and burger menu with advanced feature
 └── .vscode
 
 
